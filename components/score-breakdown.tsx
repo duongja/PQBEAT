@@ -1,0 +1,38 @@
+import type { RiskBreakdown } from "@/lib/types";
+
+const breakdownMaxima: Record<keyof RiskBreakdown, number> = {
+  signatureScheme: 40,
+  publicKeyExposure: 25,
+  upgradeability: 20,
+  l1Dependency: 15,
+};
+
+const breakdownLabels: Record<keyof RiskBreakdown, string> = {
+  signatureScheme: "Signature scheme",
+  publicKeyExposure: "Public key exposure",
+  upgradeability: "Upgrade flexibility",
+  l1Dependency: "L1 dependency",
+};
+
+export function ScoreBreakdown({ breakdown }: { breakdown: RiskBreakdown }) {
+  return (
+    <div className="space-y-4">
+      {(Object.entries(breakdown) as Array<[keyof RiskBreakdown, number]>).map(([key, value]) => (
+        <div key={key} className="space-y-2">
+          <div className="flex items-center justify-between gap-4 text-sm">
+            <span className="font-medium text-foreground">{breakdownLabels[key]}</span>
+            <span className="font-mono text-muted">
+              {value}/{breakdownMaxima[key]}
+            </span>
+          </div>
+          <div className="h-2 rounded-full bg-paper">
+            <div
+              className="h-full rounded-full bg-accent"
+              style={{ width: `${(value / breakdownMaxima[key]) * 100}%` }}
+            />
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}

@@ -1,0 +1,6 @@
+<svg width="256" height="80" viewBox="0 0 256 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="256" height="80" rx="20" fill="#FFFDF8" />
+  <text x="24" y="50" fill="#8B7041" font-family="Space Grotesk, Arial, sans-serif" font-size="34" font-weight="800" letter-spacing="0.28em">PQ</text>
+  <text x="101" y="50" fill="#16181D" font-family="Space Grotesk, Arial, sans-serif" font-size="34" font-weight="800" letter-spacing="0.24em">BEAT</text>
+  <rect x="103" y="58" width="104" height="4" rx="2" fill="#8B7041" fill-opacity="0.82" />
+</svg>
