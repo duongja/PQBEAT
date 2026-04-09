@@ -8,21 +8,22 @@ describe("route smoke tests", () => {
   it("renders the overview page from static content", () => {
     render(<Home />);
 
-    expect(screen.getByRole("heading", { name: /track quantum readiness across the ethereum stack/i })).toBeInTheDocument();
-    expect(screen.getAllByText(/tracked systems/i)).not.toHaveLength(0);
+    expect(screen.getByRole("heading", { name: /tracking quantum readiness across the ethereum stack/i })).toBeInTheDocument();
+    expect(screen.getByText(/archive intelligence v2.4/i)).toBeInTheDocument();
+    expect(screen.getByText(/ecosystem breakdown/i)).toBeInTheDocument();
   });
 
   it("renders the registry page from static content", () => {
     render(<RegistryPage />);
 
-    expect(screen.getByRole("heading", { name: /curated map of ethereum quantum readiness/i })).toBeInTheDocument();
-    expect(screen.getByText(/ecosystem registry/i)).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /post-quantum resilience index/i })).toBeInTheDocument();
+    expect(screen.getByText(/registry directory/i)).toBeInTheDocument();
   });
 
   it("renders the explainer page from static content", () => {
     render(<QuantumRiskExplainerPage />);
 
-    expect(screen.getByRole("heading", { name: /quantum readiness across ethereum, layer by layer/i })).toBeInTheDocument();
-    expect(screen.getByText(/execution accounts are still the biggest systemic exposure/i)).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /post-quantum readiness: the ethereum transition/i })).toBeInTheDocument();
+    expect(screen.getByText(/execution accounts: the path to abstraction/i)).toBeInTheDocument();
   });
 });

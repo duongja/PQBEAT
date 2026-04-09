@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PQBEAT Registry | Quantum Readiness</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,700;1,6..72,400&amp;family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-fixed-variant": "#004f4f",
+                    "secondary-fixed": "#ffdcc2",
+                    "primary-fixed-dim": "#76d6d5",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-fixed": "#93f2f2",
+                    "secondary": "#8c4f10",
+                    "primary": "#006565",
+                    "primary-container": "#008080",
+                    "on-error": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "on-primary": "#ffffff",
+                    "surface-bright": "#faf9f5",
+                    "tertiary-fixed": "#e5e2e1",
+                    "on-surface": "#1b1c1a",
+                    "inverse-primary": "#76d6d5",
+                    "on-tertiary-fixed-variant": "#474746",
+                    "on-tertiary-fixed": "#1c1b1b",
+                    "inverse-surface": "#2f312e",
+                    "secondary-container": "#fdad67",
+                    "on-secondary-container": "#763f00",
+                    "outline-variant": "#bdc9c8",
+                    "on-surface-variant": "#3e4949",
+                    "error-container": "#ffdad6",
+                    "surface": "#faf9f5",
+                    "on-tertiary": "#ffffff",
+                    "outline": "#6e7979",
+                    "surface-container-highest": "#e3e2df",
+                    "error": "#ba1a1a",
+                    "background": "#faf9f5",
+                    "surface-container-low": "#f4f4f0",
+                    "surface-dim": "#dbdad6",
+                    "surface-container": "#efeeea",
+                    "tertiary-fixed-dim": "#c8c6c5",
+                    "tertiary": "#5b5a5a",
+                    "on-secondary": "#ffffff",
+                    "on-secondary-fixed-variant": "#6d3a00",
+                    "on-secondary-fixed": "#2e1500",
+                    "on-background": "#1b1c1a",
+                    "surface-container-high": "#e9e8e4",
+                    "surface-tint": "#006a6a",
+                    "secondary-fixed-dim": "#ffb77b",
+                    "on-primary-fixed": "#002020",
+                    "surface-variant": "#e3e2df",
+                    "on-tertiary-container": "#fcf8f8",
+                    "tertiary-container": "#737272",
+                    "inverse-on-surface": "#f2f1ed",
+                    "on-primary-container": "#e3fffe"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Newsreader", "serif"],
+                    "body": ["Inter", "sans-serif"],
+                    "label": ["Space Grotesk", "monospace"]
+            }
+          }
+        }
+      }
+    </script>
+<style>body {
+    background-color: #faf9f5
+    }
+.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24
+    }
+.film-grain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.02;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuBc9HvkDuZ134yy5k127UlNn02P3rNCq6eTsWJ-qpWPfhfDv3o9dnCPc19nFVrUrCD7IALuvI38kKa26mnDV0ZM4j-3VK5Zi6Q7MlOqBvuIXLr_LXICTtdQ3FBVVqimnX7t0eoJDZtICF104B56Aw_nOLXXPkrdSPW7cH-zAW85K4jiHb9jr8tEYdTVTW8UPpGcbLpNUpl4nF11gRBX30XmtWlWOOM68PEjTFLB2DhEaexGQDjyQBLeGyX31JKO-s-CfLTfECqjVz8)
+    }</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<div class="film-grain"></div>
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#faf9f5]/80 dark:bg-[#1b1c1a]/80 backdrop-blur-xl flex justify-between items-center px-8 h-20 w-full max-w-full">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#008080] dark:text-[#00b3b3]">account_balance</span>
+<span class="text-2xl font-serif italic text-[#1b1c1a] dark:text-[#faf9f5]">PQBEAT Registry</span>
+</div>
+<div class="flex items-center gap-6">
+<button class="hover:text-[#008080] transition-colors duration-300 scale-95 duration-150 ease-in-out">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="hover:text-[#008080] transition-colors duration-300 scale-95 duration-150 ease-in-out">
+<span class="material-symbols-outlined">tune</span>
+</button>
+</div>
+</header>
+<main class="pt-32 pb-24 px-6 max-w-lg mx-auto">
+<!-- Page Intro -->
+<section class="mb-12">
+<h1 class="font-headline text-5xl tracking-tight leading-tight mb-4">Ethereum Registry</h1>
+<p class="text-on-surface-variant font-body leading-relaxed max-w-sm">
+                A quantitative archive of protocol vulnerability. Source-backed scoring measuring cryptographic resilience against post-quantum adversaries.
+            </p>
+</section>
+<!-- Search & Filter Bar -->
+<section class="mb-8 space-y-4">
+<div class="relative group">
+<input class="w-full bg-surface-container-high border-none py-4 px-6 font-label uppercase tracking-widest text-xs focus:ring-1 focus:ring-primary placeholder:text-outline" placeholder="Search protocol..." type="text"/>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+</div>
+<div class="flex gap-2 overflow-x-auto no-scrollbar pb-2">
+<button class="whitespace-nowrap px-4 py-2 bg-primary text-on-primary font-label text-[10px] uppercase tracking-widest">All Assets</button>
+<button class="whitespace-nowrap px-4 py-2 bg-surface-container-low text-on-surface-variant font-label text-[10px] uppercase tracking-widest hover:bg-surface-container-highest transition-colors">L2 Solutions</button>
+<button class="whitespace-nowrap px-4 py-2 bg-surface-container-low text-on-surface-variant font-label text-[10px] uppercase tracking-widest hover:bg-surface-container-highest transition-colors">DEX / AMM</button>
+<button class="whitespace-nowrap px-4 py-2 bg-surface-container-low text-on-surface-variant font-label text-[10px] uppercase tracking-widest hover:bg-surface-container-highest transition-colors">Liquid Staking</button>
+</div>
+<div class="flex justify-between items-center pt-2">
+<span class="font-label text-[10px] uppercase tracking-[0.2em] text-outline">Displaying 142 Entities</span>
+<span class="font-label text-[10px] uppercase tracking-[0.2em] text-primary font-bold">Sort: Score Desc</span>
+</div>
+</section>
+<!-- Results List -->
+<div class="space-y-1">
+<!-- Entity Card (Standard) -->
+<article class="bg-surface-container-low p-6 group hover:bg-surface-container-highest transition-colors duration-300">
+<div class="flex justify-between items-start mb-6">
+<div>
+<h3 class="font-headline text-2xl mb-1">Aave V3</h3>
+<div class="flex gap-3">
+<span class="font-label text-[10px] uppercase tracking-widest text-primary">L1 Protocol</span>
+<span class="font-label text-[10px] uppercase tracking-widest text-secondary">Lending</span>
+</div>
+</div>
+<div class="text-right">
+<div class="font-label text-2xl font-bold text-on-surface leading-none">84<span class="text-xs ml-0.5 opacity-50">%</span></div>
+<div class="font-label text-[9px] uppercase tracking-tighter text-outline mt-1">Readiness</div>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="h-[2px] flex-1 bg-surface-container-high overflow-hidden">
+<div class="h-full bg-primary" style="width: 84%"></div>
+</div>
+<span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant flex items-center gap-1">
+                        Risk: <span class="text-primary font-bold">Low</span>
+</span>
+</div>
+</article>
+<!-- Expanded Result (Active State) -->
+<article class="bg-surface-container-lowest shadow-[0_20px_40px_rgba(27,28,26,0.08)] relative z-10 border-l-4 border-primary">
+<div class="p-6">
+<div class="flex justify-between items-start mb-6">
+<div>
+<h3 class="font-headline text-2xl mb-1">Uniswap V3</h3>
+<div class="flex gap-3">
+<span class="font-label text-[10px] uppercase tracking-widest text-primary">L2 Mainnet</span>
+<span class="font-label text-[10px] uppercase tracking-widest text-secondary">DEX / AMM</span>
+</div>
+</div>
+<div class="text-right">
+<div class="font-label text-2xl font-bold text-secondary leading-none">68<span class="text-xs ml-0.5 opacity-50">%</span></div>
+<div class="font-label text-[9px] uppercase tracking-tighter text-outline mt-1">Readiness</div>
+</div>
+</div>
+<div class="h-[1px] bg-surface-container-high my-6"></div>
+<!-- Detailed Panel Inside -->
+<div class="grid grid-cols-2 gap-6 mb-8">
+<div>
+<div class="font-label text-[9px] uppercase tracking-widest text-outline mb-1">Confidence Score</div>
+<div class="font-headline text-lg italic text-on-surface">92.4% Verify</div>
+</div>
+<div class="text-right">
+<div class="font-label text-[9px] uppercase tracking-widest text-outline mb-1">Last Review</div>
+<div class="font-label text-xs font-bold text-on-surface">NOV 12, 2024</div>
+</div>
+</div>
+<div class="space-y-6">
+<div>
+<span class="font-label text-[10px] uppercase tracking-[0.15em] text-outline block mb-3">Factor Breakdown</span>
+<div class="space-y-3">
+<div class="flex justify-between items-center">
+<span class="font-body text-xs text-on-surface-variant">Signature Algorithm</span>
+<div class="w-24 h-1 bg-surface-container-high"><div class="h-full bg-secondary w-[40%]"></div></div>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-body text-xs text-on-surface-variant">Hash Resilience</span>
+<div class="w-24 h-1 bg-surface-container-high"><div class="h-full bg-primary w-[90%]"></div></div>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-body text-xs text-on-surface-variant">Upgradeability</span>
+<div class="w-24 h-1 bg-surface-container-high"><div class="h-full bg-primary w-[75%]"></div></div>
+</div>
+</div>
+</div>
+<div>
+<span class="font-label text-[10px] uppercase tracking-[0.15em] text-outline block mb-3">Readiness Signals</span>
+<ul class="space-y-2">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[14px] text-primary mt-0.5">check_circle</span>
+<span class="font-body text-xs leading-relaxed">Multi-sig utilizes Lamport signatures for recovery keys.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[14px] text-error mt-0.5">error_outline</span>
+<span class="font-body text-xs leading-relaxed">Core pools remain dependent on ECDSA verification.</span>
+</li>
+</ul>
+</div>
+<div>
+<span class="font-label text-[10px] uppercase tracking-[0.15em] text-outline block mb-3">Source Intelligence</span>
+<div class="flex flex-col gap-2">
+<a class="group flex justify-between items-center p-3 bg-surface-container-low hover:bg-primary-container transition-colors" href="#">
+<span class="font-label text-[10px] uppercase tracking-widest text-on-surface group-hover:text-on-primary-container">Quantum Audit Report v2.1</span>
+<span class="material-symbols-outlined text-sm group-hover:text-on-primary-container">arrow_outward</span>
+</a>
+<a class="group flex justify-between items-center p-3 bg-surface-container-low hover:bg-primary-container transition-colors" href="#">
+<span class="font-label text-[10px] uppercase tracking-widest text-on-surface group-hover:text-on-primary-container">NIST Compliance Dashboard</span>
+<span class="material-symbols-outlined text-sm group-hover:text-on-primary-container">arrow_outward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</article>
+<!-- Entity Card (Standard) -->
+<article class="bg-surface-container-low p-6 group hover:bg-surface-container-highest transition-colors duration-300">
+<div class="flex justify-between items-start mb-6">
+<div>
+<h3 class="font-headline text-2xl mb-1">MakerDAO</h3>
+<div class="flex gap-3">
+<span class="font-label text-[10px] uppercase tracking-widest text-primary">L1 Protocol</span>
+<span class="font-label text-[10px] uppercase tracking-widest text-secondary">CDP / Stable</span>
+</div>
+</div>
+<div class="text-right">
+<div class="font-label text-2xl font-bold text-on-surface leading-none">91<span class="text-xs ml-0.5 opacity-50">%</span></div>
+<div class="font-label text-[9px] uppercase tracking-tighter text-outline mt-1">Readiness</div>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="h-[2px] flex-1 bg-surface-container-high overflow-hidden">
+<div class="h-full bg-primary" style="width: 91%"></div>
+</div>
+<span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant flex items-center gap-1">
+                        Risk: <span class="text-primary font-bold">Minimal</span>
+</span>
+</div>
+</article>
+<!-- Entity Card (Standard) -->
+<article class="bg-surface-container-low p-6 group hover:bg-surface-container-highest transition-colors duration-300">
+<div class="flex justify-between items-start mb-6">
+<div>
+<h3 class="font-headline text-2xl mb-1">Curve Finance</h3>
+<div class="flex gap-3">
+<span class="font-label text-[10px] uppercase tracking-widest text-primary">L1 Protocol</span>
+<span class="font-label text-[10px] uppercase tracking-widest text-secondary">DEX / Stables</span>
+</div>
+</div>
+<div class="text-right">
+<div class="font-label text-2xl font-bold text-error leading-none">42<span class="text-xs ml-0.5 opacity-50">%</span></div>
+<div class="font-label text-[9px] uppercase tracking-tighter text-outline mt-1">Readiness</div>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="h-[2px] flex-1 bg-surface-container-high overflow-hidden">
+<div class="h-full bg-error" style="width: 42%"></div>
+</div>
+<span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant flex items-center gap-1">
+                        Risk: <span class="text-error font-bold">High</span>
+</span>
+</div>
+</article>
+</div>
+</main>
+<!-- NavigationDrawer (Mobile Sidebar Mockup) -->
+<aside class="fixed inset-0 z-50 pointer-events-none opacity-0 invisible">
+<!-- Overlay -->
+<div class="absolute inset-0 bg-on-surface/20 backdrop-blur-sm"></div>
+<!-- Drawer -->
+<nav class="fixed left-0 top-0 h-full w-72 bg-[#f4f4f0] dark:bg-[#1b1c1a] flex flex-col p-6 shadow-[40px_0_60px_-15px_rgba(27,28,26,0.05)] transition-transform duration-500 cubic-bezier(0.16, 1, 0.3, 1) -translate-x-full">
+<div class="mb-12">
+<span class="font-serif text-lg italic text-[#1b1c1a] dark:text-[#faf9f5]">Registry Filters</span>
+</div>
+<div class="flex flex-col gap-2">
+<a class="flex items-center gap-4 p-4 bg-[#ffffff] dark:bg-[#2a2b28] text-[#008080] font-bold" href="#">
+<span class="material-symbols-outlined">security</span>
+<span class="font-mono uppercase tracking-[0.05em] text-xs">Quantum Readiness</span>
+</a>
+<a class="flex items-center gap-4 p-4 text-[#1b1c1a]/80 dark:text-[#faf9f5]/80 hover:bg-[#e9e8e4] dark:hover:bg-[#333431] transition-all" href="#">
+<span class="material-symbols-outlined">fact_check</span>
+<span class="font-mono uppercase tracking-[0.05em] text-xs">Verification Logs</span>
+</a>
+<a class="flex items-center gap-4 p-4 text-[#1b1c1a]/80 dark:text-[#faf9f5]/80 hover:bg-[#e9e8e4] dark:hover:bg-[#333431] transition-all" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-mono uppercase tracking-[0.05em] text-xs">Algorithm Analysis</span>
+</a>
+<a class="flex items-center gap-4 p-4 text-[#1b1c1a]/80 dark:text-[#faf9f5]/80 hover:bg-[#e9e8e4] dark:hover:bg-[#333431] transition-all" href="#">
+<span class="material-symbols-outlined">hub</span>
+<span class="font-mono uppercase tracking-[0.05em] text-xs">Ethereum Standards</span>
+</a>
+</div>
+</nav>
+</aside>
+<!-- Footer -->
+<footer class="bg-[#faf9f5] dark:bg-[#1b1c1a] w-full py-12 border-t border-[#1b1c1a]/5 flex flex-col items-center gap-6 px-8">
+<div class="flex gap-8">
+<a class="font-mono text-[10px] tracking-wider uppercase opacity-70 text-[#1b1c1a] dark:text-[#faf9f5] hover:text-[#008080] transition-all" href="#">Methodology</a>
+<a class="font-mono text-[10px] tracking-wider uppercase opacity-70 text-[#1b1c1a] dark:text-[#faf9f5] hover:text-[#008080] transition-all" href="#">Whitepaper</a>
+<a class="font-mono text-[10px] tracking-wider uppercase opacity-70 text-[#1b1c1a] dark:text-[#faf9f5] hover:text-[#008080] transition-all" href="#">API Docs</a>
+</div>
+<p class="font-mono text-[10px] tracking-wider uppercase opacity-70 text-center max-w-xs">
+            © 2024 PQBEAT Research Institute. All rights reserved. Quantum-Readiness Registry v1.0.2
+        </p>
+</footer>
+<!-- Bottom Navigation Bar (Mobile Anchor) -->
+<nav class="md:hidden fixed bottom-0 w-full bg-surface-container-lowest flex justify-around items-center h-16 shadow-[0_-4px_24px_rgba(27,28,26,0.04)] px-4 z-50">
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">list_alt</span>
+<span class="font-label text-[8px] uppercase tracking-widest font-bold">Registry</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-on-surface-variant/60">
+<span class="material-symbols-outlined">monitoring</span>
+<span class="font-label text-[8px] uppercase tracking-widest">Trends</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-on-surface-variant/60">
+<span class="material-symbols-outlined">science</span>
+<span class="font-label text-[8px] uppercase tracking-widest">Lab</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-on-surface-variant/60">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label text-[8px] uppercase tracking-widest">Account</span>
+</button>
+</nav>
+</body></html>

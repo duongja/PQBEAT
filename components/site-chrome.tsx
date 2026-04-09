@@ -1,5 +1,7 @@
+"use client";
+
 import Link from "next/link";
-import { PqbeatWordmark } from "@/components/pqbeat-wordmark";
+import { usePathname } from "next/navigation";
 
 const navItems = [
   { href: "/", label: "Overview" },
@@ -7,42 +9,75 @@ const navItems = [
   { href: "/learn/quantum-risk-in-ethereum", label: "Deep Dive" },
 ];
 
+function navLinkClass(active: boolean) {
+  return active
+    ? "border-b-2 border-accent pb-1 text-accent"
+    : "pb-1 text-foreground/60 transition-colors hover:text-accent";
+}
+
 export function SiteHeader() {
+  const pathname = usePathname();
+
   return (
-    <header className="sticky top-0 z-40 border-b border-line/80 bg-paper/90 backdrop-blur">
-      <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-6 px-6 py-4 lg:px-10">
-        <Link href="/" className="flex flex-col gap-1">
-          <PqbeatWordmark />
-          <div className="text-sm font-semibold tracking-[0.06em] text-muted">
-            Quantum readiness for the Ethereum stack
-          </div>
+    <header className="fixed inset-x-0 top-0 z-50 bg-background/80 backdrop-blur-xl">
+      <nav className="mx-auto flex w-full max-w-screen-2xl items-center justify-between px-6 py-4 lg:px-8">
+        <Link href="/" className="font-headline text-3xl font-extrabold tracking-[-0.08em] text-foreground">
+          PQBEAT
         </Link>
 
-        <nav className="hidden items-center gap-2 rounded-full border border-line bg-panel/80 p-1 text-sm md:flex">
-          {navItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="rounded-full px-4 py-2 text-muted transition hover:bg-paper hover:text-foreground"
-            >
-              {item.label}
-            </Link>
-          ))}
-        </nav>
-      </div>
+        <div className="hidden items-center gap-8 font-headline text-base tracking-tight md:flex">
+          {navItems.map((item) => {
+            const active = item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
+
+            return (
+              <Link key={item.href} href={item.href} className={navLinkClass(active)}>
+                {item.label}
+              </Link>
+            );
+          })}
+        </div>
+
+        <div className="hidden items-center gap-4 md:flex">
+          <span className="font-label text-[10px] uppercase tracking-[0.24em] text-accent">Research index</span>
+        </div>
+      </nav>
     </header>
   );
 }
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-line/80 bg-paper">
-      <div className="mx-auto flex w-full max-w-7xl flex-col gap-4 px-6 py-8 text-sm text-muted lg:px-10 md:flex-row md:items-center md:justify-between">
-        <p>
-          PQBEAT tracks quantum readiness across Ethereum with source-backed assessments, transparent scoring,
-          and review-date stamped methodology.
-        </p>
-        <p className="font-mono text-xs tracking-[0.18em] uppercase">Public registry • Static data release</p>
+    <footer className="bg-[#1b1c1a] text-stone-400">
+      <div className="mx-auto flex w-full max-w-screen-2xl flex-col gap-10 px-6 py-12 md:flex-row md:items-start md:justify-between lg:px-8">
+        <div>
+          <div className="font-headline text-2xl font-semibold tracking-[-0.06em] text-[#faf9f5]">PQBEAT</div>
+          <p className="mt-3 max-w-sm text-sm leading-7 text-stone-500">
+            Independent research on quantum-readiness across Ethereum, with source-backed assessments and dated
+            methodology snapshots.
+          </p>
+        </div>
+
+        <div className="grid gap-8 text-xs md:grid-cols-3">
+          <div className="space-y-3">
+            <p className="font-label text-[10px] uppercase tracking-[0.24em] text-stone-300">Framework</p>
+            <p>Methodology</p>
+            <p>Registry</p>
+            <p>Peer Review</p>
+          </div>
+          <div className="space-y-3">
+            <p className="font-label text-[10px] uppercase tracking-[0.24em] text-stone-300">Research</p>
+            <p>Ethereum</p>
+            <p>Rollups</p>
+            <p>Wallets</p>
+          </div>
+          <div className="space-y-3">
+            <p className="font-label text-[10px] uppercase tracking-[0.24em] text-stone-300">Network Status</p>
+            <p className="flex items-center gap-2 text-[#faf9f5]">
+              <span className="h-2 w-2 rounded-full bg-accent" />
+              Operational
+            </p>
+          </div>
+        </div>
       </div>
     </footer>
   );

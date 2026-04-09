@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,700;0,6..72,800;1,6..72,400&amp;family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-container": "#fdad67",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-on-surface": "#f2f1ed",
+                        "on-primary": "#ffffff",
+                        "surface-container-high": "#e9e8e4",
+                        "surface-container-low": "#f4f4f0",
+                        "surface-tint": "#006a6a",
+                        "primary-container": "#008080",
+                        "surface-bright": "#faf9f5",
+                        "on-surface-variant": "#3e4949",
+                        "secondary": "#8c4f10",
+                        "on-secondary": "#ffffff",
+                        "outline": "#6e7979",
+                        "secondary-fixed-dim": "#ffb77b",
+                        "on-primary-fixed": "#002020",
+                        "on-primary-container": "#e3fffe",
+                        "surface-container-highest": "#e3e2df",
+                        "on-primary-fixed-variant": "#004f4f",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "background": "#faf9f5",
+                        "on-background": "#1b1c1a",
+                        "primary": "#006565",
+                        "inverse-surface": "#2f312e",
+                        "surface-dim": "#dbdad6",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "outline-variant": "#bdc9c8",
+                        "secondary-fixed": "#ffdcc2",
+                        "on-secondary-fixed-variant": "#6d3a00",
+                        "surface-container": "#efeeea",
+                        "on-error": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-tertiary-container": "#fcf8f8",
+                        "on-secondary-container": "#763f00",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "on-surface": "#1b1c1a",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed": "#e5e2e1",
+                        "tertiary-container": "#737272",
+                        "primary-fixed-dim": "#76d6d5",
+                        "surface": "#faf9f5",
+                        "primary-fixed": "#93f2f2",
+                        "surface-variant": "#e3e2df",
+                        "tertiary": "#5b5a5a",
+                        "on-secondary-fixed": "#2e1500",
+                        "inverse-primary": "#76d6d5"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Newsreader", "serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Space Grotesk", "monospace"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24
+    }
+.grain-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.02;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuCMuE71Y3O1zquCb2smbAJWk1oG13ARayvLuCd2fEDf1pw6d7jMtL9QV7UN2BZFMir59QjTSRvLwTPiaZjLzuoIwtENBa2cjiS3Yr47kedpQoVhcrvK2hBT7Z3LDvCzyW2auiSqMbjYopifUBuhPa3bT8jtU_ntnXYUaoLjKfUCXfdPostD5ZW8KyeR1eONzCXGd8zmw1TGYiRN5V4i-gtWkdkr4Wwpjh42Nfp1M2bMzQR9TuoXiFl6V32Qarkkfg6q8dC71gJasC0)
+    }
+body {
+    -webkit-font-smoothing: antialiased
+    }
+.asymmetric-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 4rem
+    }</style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-secondary-container selection:text-on-secondary-container">
+<div class="grain-overlay"></div>
+<!-- TopNavBar -->
+<header class="fixed top-0 z-50 w-full bg-[#faf9f5]/80 dark:bg-[#1b1c1a]/80 backdrop-blur-xl">
+<nav class="flex justify-between items-center w-full px-8 py-4 max-w-screen-2xl mx-auto">
+<div class="text-2xl font-black text-[#1b1c1a] dark:text-[#faf9f5] tracking-tighter font-headline">PQBEAT</div>
+<div class="hidden md:flex items-center gap-10">
+<a class="font-serif text-[#1b1c1a] dark:text-[#faf9f5] tracking-tight text-[#008080] border-b-2 border-[#008080] pb-1" href="#">Analysis</a>
+<a class="font-serif text-[#1b1c1a] dark:text-[#faf9f5] tracking-tight text-[#1b1c1a]/60 dark:text-[#faf9f5]/60 hover:text-[#1b1c1a] dark:hover:text-[#faf9f5] transition-colors" href="#">Registry</a>
+<a class="font-serif text-[#1b1c1a] dark:text-[#faf9f5] tracking-tight text-[#1b1c1a]/60 dark:text-[#faf9f5]/60 hover:text-[#1b1c1a] dark:hover:text-[#faf9f5] transition-colors" href="#">Deep Dives</a>
+<a class="font-serif text-[#1b1c1a] dark:text-[#faf9f5] tracking-tight text-[#1b1c1a]/60 dark:text-[#faf9f5]/60 hover:text-[#1b1c1a] dark:hover:text-[#faf9f5] transition-colors" href="#">Archive</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-[#f4f4f0] dark:hover:bg-[#2a2b29] transition-all">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</nav>
+</header>
+<main class="pt-32 pb-24 max-w-screen-2xl mx-auto px-8">
+<!-- Hero Section -->
+<section class="mb-24 grid grid-cols-12 gap-8">
+<div class="col-span-12 md:col-span-8 lg:col-span-7">
+<div class="font-label uppercase tracking-widest text-[10px] text-primary mb-6 flex items-center gap-2">
+<span class="w-8 h-px bg-primary"></span>
+                    Research Vol. 04 Edition
+                </div>
+<h1 class="font-headline text-7xl font-extrabold tracking-tighter leading-none mb-8 text-on-surface">
+                    Post-Quantum Readiness: The Ethereum Transition
+                </h1>
+<p class="font-headline italic text-2xl text-on-surface-variant leading-relaxed mb-12 border-l-4 border-secondary pl-8">
+                    An inquiry into the cryptographic shift from ECDSA to lattice-based primitives and the architectural implications for the world's primary smart contract platform.
+                </p>
+</div>
+<div class="col-span-12 md:col-span-4 lg:col-span-5 relative">
+<div class="w-full h-full bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover opacity-80 mix-blend-multiply" data-alt="abstract cryptographic visualization with interlocking lattice patterns in deep teal and ivory tones, high-end editorial digital art" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUdjfOSTV5rJ5FlpQIF3Brd8Yh-EbxvSfj1OehYplmTLRUE5hP8zzZiChc4GDm3BnLjxHQOBXm7VKzssJFh1P5WmbhA_AFgM072LH_vOU1nT8zChSofUC3hX6_c3xuJ7yNMGFst5usj3yZwofnDVyCwB6B095nBuNm8aGFKMKqHHxnRksB1S9z59UU9yiOjy6N0FmN7RvK7oWfYhTRJvPFZmnR_K1AdV5tnAQgu1BKbATl1fOtfb0JyRtNgJIQ4NKILv50u17vdmA"/>
+</div>
+<div class="absolute -bottom-6 -left-6 bg-surface-container-lowest p-6 shadow-sm border border-outline-variant/15 w-48">
+<div class="font-label text-[10px] uppercase text-outline mb-1">Status</div>
+<div class="font-body font-bold text-primary">CRITICAL PRIORITY</div>
+</div>
+</div>
+</section>
+<!-- Main Content & Sidebar Layout -->
+<div class="grid grid-cols-12 gap-16">
+<!-- Left Sidebar (Metadata) -->
+<aside class="col-span-12 lg:col-span-3 space-y-12">
+<div class="sticky top-32">
+<div class="mb-12">
+<div class="font-label uppercase text-[10px] tracking-widest text-secondary mb-4">Review Date</div>
+<div class="font-headline text-xl font-bold">Nov 14, 2024</div>
+</div>
+<div class="mb-12">
+<div class="font-label uppercase text-[10px] tracking-widest text-secondary mb-6">Scoring Pillars</div>
+<ul class="space-y-6">
+<li class="group">
+<div class="flex justify-between items-end mb-2">
+<span class="font-body text-sm font-semibold">Signature Algorithm</span>
+<span class="font-label text-xs text-primary">HIGH RISK</span>
+</div>
+<div class="h-1 w-full bg-surface-container-high">
+<div class="h-full bg-primary w-[85%]"></div>
+</div>
+</li>
+<li class="group">
+<div class="flex justify-between items-end mb-2">
+<span class="font-body text-sm font-semibold">Hash Resilience</span>
+<span class="font-label text-xs text-primary">MODERATE</span>
+</div>
+<div class="h-1 w-full bg-surface-container-high">
+<div class="h-full bg-primary w-[40%]"></div>
+</div>
+</li>
+<li class="group">
+<div class="flex justify-between items-end mb-2">
+<span class="font-body text-sm font-semibold">Upgradeability</span>
+<span class="font-label text-xs text-secondary">READY</span>
+</div>
+<div class="h-1 w-full bg-surface-container-high">
+<div class="h-full bg-secondary w-[92%]"></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="pt-8 border-t border-outline-variant/20">
+<div class="font-label uppercase text-[10px] tracking-widest text-secondary mb-4">Source Intelligence</div>
+<div class="flex flex-col gap-3">
+<a class="font-body text-xs text-on-surface-variant hover:text-primary flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-[14px]" data-icon="description">description</span>
+                                EIP-4337 Specification
+                            </a>
+<a class="font-body text-xs text-on-surface-variant hover:text-primary flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-[14px]" data-icon="database">database</span>
+                                NIST PQC Round 4
+                            </a>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Long-form Content -->
+<article class="col-span-12 lg:col-span-9 space-y-24">
+<!-- Section 1 -->
+<section class="max-w-3xl" id="execution-accounts">
+<h2 class="font-headline text-4xl font-bold tracking-tight mb-8">Execution Accounts: The Path to Abstraction</h2>
+<p class="font-body text-lg leading-relaxed text-on-surface-variant mb-6">
+                        Current Externally Owned Accounts (EOAs) are fundamentally tied to the Elliptic Curve Digital Signature Algorithm (ECDSA). In a post-quantum landscape, Shor’s algorithm poses an existential threat to these keys. 
+                    </p>
+<div class="bg-surface-container-low p-10 mb-8">
+<div class="font-label text-[10px] text-primary mb-4">COMPARATIVE ARCHITECTURE</div>
+<div class="grid grid-cols-2 gap-8">
+<div>
+<div class="font-headline font-bold text-sm mb-2">Legacy EOA</div>
+<div class="font-body text-xs text-on-surface-variant">Hard-coded ECDSA verification in the protocol layer. Inflexible and vulnerable.</div>
+</div>
+<div>
+<div class="font-headline font-bold text-sm mb-2">PQC Abstraction</div>
+<div class="font-body text-xs text-on-surface-variant">Smart-contract logic determines verification. Supports Winternitz OT-signatures.</div>
+</div>
+</div>
+</div>
+<p class="font-body text-lg leading-relaxed text-on-surface-variant">
+                        The transition relies on Account Abstraction (AA) to decouple the verification logic from the core protocol, allowing users to rotate to quantum-resistant schemes without losing their on-chain identity.
+                    </p>
+</section>
+<!-- Section 2: Data Insight -->
+<section class="bg-surface-container-high/30 p-12 -mx-12" id="validators">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<div>
+<h2 class="font-headline text-4xl font-bold tracking-tight mb-6">Validators: BLS vs Lamport</h2>
+<p class="font-body text-on-surface-variant leading-relaxed">
+                                Ethereum’s consensus layer currently utilizes BLS signatures for validator aggregation. While efficient, BLS relies on the hardness of pairings over elliptic curves. Research into <strong>Lamport Signatures</strong> and <strong>XMSS</strong> (eXtended Merkle Signature Scheme) is accelerating as a viable consensus-level replacement.
+                            </p>
+</div>
+<div class="relative aspect-square bg-surface-container-lowest p-8 shadow-sm">
+<div class="w-full h-full border border-outline-variant/20 flex items-center justify-center">
+<img class="w-full h-full object-contain" data-alt="minimalist technical diagram showing Merkle tree structure with quantum-themed nodes in muted charcoal and teal" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcvMMVI9IYO4rDO6vrtYSHgkMGzg3k7gxqo4lOlEMkCpn-gc017LOISz0ZPq2eOIlXjLISi_L6tgKAKq2QX1Fwoi8VVuRw_mKGZQCaXeFU7uMV-remwS_RjDd6X_lmQmbbStlH3rM8jCkyliXL3zzx-Xffl2fAzfWh2bLEfUNUsJS96miJcZruZ8R1flcoonpMxsCOjDUfzLQjW13ExPbKnt1HEb1iqKmPGrJReVSIy9LvPww1sl1vcIj1Rt2oUXfEYazNYTDdQac"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3 -->
+<section class="max-w-3xl" id="rollups">
+<h2 class="font-headline text-4xl font-bold tracking-tight mb-8">Rollups &amp; ZK-STARK Systems</h2>
+<p class="font-body text-lg leading-relaxed text-on-surface-variant mb-6">
+                        Layer 2 scaling solutions, particularly ZK-Rollups, provide a unique advantage. Unlike SNARKs, which often require a trusted setup and specific algebraic curves, **STARKs** (Scalable Transparent Argument of Knowledge) are inherently post-quantum secure as they rely on collision-resistant hash functions.
+                    </p>
+<blockquote class="border-l-2 border-primary py-2 pl-8 my-10">
+<p class="font-headline italic text-2xl text-on-surface">"The shift to STARK-based proof systems isn't just about scalability; it's the primary defense line for the Ethereum ecosystem's long-term integrity."</p>
+<cite class="font-label text-[10px] uppercase tracking-widest mt-4 block">— Lead Researcher, PQBEAT</cite>
+</blockquote>
+</section>
+<!-- Section 4 -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-12" id="smart-accounts">
+<div class="bg-surface-container-lowest p-10 border border-outline-variant/10">
+<span class="material-symbols-outlined text-secondary text-4xl mb-6" data-icon="verified">verified</span>
+<h3 class="font-headline text-2xl font-bold mb-4">ERC-4337 Compatibility</h3>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed">
+                            The integration of "Paymasters" and "Bundlers" allows for quantum-resistant signatures to be verified off-chain before being committed, drastically reducing gas costs for complex PQC schemes.
+                        </p>
+</div>
+<div class="bg-surface-container-lowest p-10 border border-outline-variant/10">
+<span class="material-symbols-outlined text-primary text-4xl mb-6" data-icon="biotech">biotech</span>
+<h3 class="font-headline text-2xl font-bold mb-4">Lattice Implementations</h3>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed">
+                            Testing is underway for CRYSTALS-Kyber and Dilithium implementations within the EVM environment, targeting sub-100ms verification times for standard transactions.
+                        </p>
+</div>
+</section>
+</article>
+</div>
+<!-- CTA Section -->
+<section class="mt-40 mb-20 bg-primary text-on-primary p-20 text-center relative overflow-hidden">
+<div class="absolute inset-0 opacity-10">
+<img class="w-full h-full object-cover" data-alt="extreme close up of fine textured paper with geometric architectural lines" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbN9EVAFfLeiDtq_Qm4E4u47jVzfZgOCmQXvW45Zo7hrT4cFDob8h9fqCB91Ik3Xi0LkJK5_eEJB8sh3mVHhKMtjh6uYi5E8hWD04yZa-9fwGvkEceBEPbqe32B8JQrZTTYQPbI3ZqAmxw3-J_drXMP0ADrxFaq-o7I731ZNeSdD7DUKBtWMntFpRm1aNGjuK5M-CQgjsNAZ1XVYLFN5-0xKIRgXViA_RsRkKEFNdT9cQI8J4vsl4CnJPw_PDiW73KoMu4W6KE8aY"/>
+</div>
+<div class="relative z-10 max-w-2xl mx-auto">
+<h2 class="font-headline text-5xl font-bold mb-8">Extend Your Analysis</h2>
+<p class="font-body text-on-primary/80 mb-10 text-lg">
+                    Access the complete technical registry of quantum-vulnerable primitives across all major blockchain networks.
+                </p>
+<button class="bg-secondary text-on-secondary px-12 py-5 font-label uppercase tracking-widest text-xs hover:bg-secondary/90 transition-all">
+                    Explore the Full Registry
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-high py-20 px-8">
+<div class="max-w-screen-2xl mx-auto grid grid-cols-12 gap-12">
+<div class="col-span-12 lg:col-span-4">
+<div class="text-xl font-black tracking-tighter font-headline mb-6">PQBEAT</div>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed max-w-xs">
+                    Independent cryptographic audit and research firm dedicated to the post-quantum transition of digital assets and distributed systems.
+                </p>
+</div>
+<div class="col-span-6 lg:col-span-2">
+<div class="font-label uppercase text-[10px] tracking-widest text-primary mb-6">Research</div>
+<ul class="space-y-3 font-body text-xs text-on-surface-variant">
+<li><a class="hover:text-primary" href="#">Methodology</a></li>
+<li><a class="hover:text-primary" href="#">Lattice Standards</a></li>
+<li><a class="hover:text-primary" href="#">Hash Functions</a></li>
+<li><a class="hover:text-primary" href="#">Whitepapers</a></li>
+</ul>
+</div>
+<div class="col-span-6 lg:col-span-2">
+<div class="font-label uppercase text-[10px] tracking-widest text-primary mb-6">Company</div>
+<ul class="space-y-3 font-body text-xs text-on-surface-variant">
+<li><a class="hover:text-primary" href="#">Archive</a></li>
+<li><a class="hover:text-primary" href="#">Advisory</a></li>
+<li><a class="hover:text-primary" href="#">Intelligence</a></li>
+<li><a class="hover:text-primary" href="#">Contact</a></li>
+</ul>
+</div>
+<div class="col-span-12 lg:col-span-4 flex flex-col items-end justify-between">
+<div class="flex gap-4">
+<a class="w-10 h-10 border border-outline-variant/20 flex items-center justify-center hover:bg-surface-container-lowest transition-colors" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="language">language</span>
+</a>
+<a class="w-10 h-10 border border-outline-variant/20 flex items-center justify-center hover:bg-surface-container-lowest transition-colors" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="share">share</span>
+</a>
+</div>
+<div class="font-label text-[10px] text-outline mt-12">
+                    © 2024 PQBEAT RESEARCH LABORATORY. ALL RIGHTS RESERVED.
+                </div>
+</div>
+</div>
+</footer>
+</body></html>

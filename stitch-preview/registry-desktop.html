@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PQBEAT Registry | ARCHIVIST AUDIT</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,700;1,400;1,700&amp;family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#e3e2df",
+                        "tertiary-container": "#737272",
+                        "surface-container-highest": "#e3e2df",
+                        "on-primary": "#ffffff",
+                        "secondary-container": "#fdad67",
+                        "tertiary": "#5b5a5a",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "surface-container-low": "#f4f4f0",
+                        "surface-dim": "#dbdad6",
+                        "surface-container": "#efeeea",
+                        "secondary-fixed-dim": "#ffb77b",
+                        "on-error-container": "#93000a",
+                        "surface-container-high": "#e9e8e4",
+                        "on-tertiary-container": "#fcf8f8",
+                        "tertiary-fixed": "#e5e2e1",
+                        "secondary": "#8c4f10",
+                        "on-secondary-fixed": "#2e1500",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "on-background": "#1b1c1a",
+                        "on-surface": "#1b1c1a",
+                        "on-primary-fixed": "#002020",
+                        "on-primary-container": "#e3fffe",
+                        "inverse-surface": "#2f312e",
+                        "on-tertiary": "#ffffff",
+                        "inverse-on-surface": "#f2f1ed",
+                        "background": "#faf9f5",
+                        "error": "#ba1a1a",
+                        "secondary-fixed": "#ffdcc2",
+                        "primary-fixed-dim": "#76d6d5",
+                        "primary-fixed": "#93f2f2",
+                        "surface-tint": "#006a6a",
+                        "inverse-primary": "#76d6d5",
+                        "primary": "#006565",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "outline": "#6e7979",
+                        "on-surface-variant": "#3e4949",
+                        "on-secondary-container": "#763f00",
+                        "primary-container": "#008080",
+                        "surface": "#faf9f5",
+                        "on-error": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed-variant": "#004f4f",
+                        "surface-container-lowest": "#ffffff",
+                        "outline-variant": "#bdc9c8",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed-variant": "#6d3a00",
+                        "surface-bright": "#faf9f5"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Newsreader", "serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Space Grotesk", "monospace"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>body {
+    background-color: #faf9f5;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuDCbaujWDtTpX3JJMoz-4vfZIwGsIxSQM6bS2Fh_ZrV4UoxKEkde509G_QGGQ-q_cSZRQJYeMolN_xHyL09qOeLu7f8xOKSUQoJdSzvt1x-RjM8hvw5mYWNzmwewRThV20cWcool71x1KG2hZIPm2eeV6wetO_8BLmD7Y27PQwETITOzxW9wgxCXvnasGbRI6H69zgy6PZ6bjVynVjclCIEdWaUK2q06Q8UCHJcXzsMjtNZYdv-lGgzzuVlyD1YDqvcCyJZ6bGBIaQ);
+    /* Subtle film grain */
+    }
+.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24
+    }
+.custom-scrollbar::-webkit-scrollbar {
+    width: 4px
+    }
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: #faf9f5
+    }
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #006565
+    }</style>
+</head>
+<body class="font-body text-on-background selection:bg-primary-container selection:text-white">
+<!-- Top Navigation Bar -->
+<header class="bg-[#faf9f5] dark:bg-[#1b1c1a] backdrop-blur-md opacity-95 fixed top-0 left-0 right-0 z-50">
+<div class="flex justify-between items-center px-12 py-6 w-full max-w-screen-2xl mx-auto">
+<div class="flex items-center gap-12">
+<span class="font-serif text-2xl font-bold italic tracking-tighter text-[#1b1c1a] dark:text-[#faf9f5]">ARCHIVIST AUDIT</span>
+<nav class="hidden md:flex items-center gap-8">
+<a class="font-serif text-lg tracking-tight font-medium Newsreader text-[#008080] border-b-2 border-[#008080] pb-1 cursor-pointer transition-opacity active:opacity-70" href="#">Protocols</a>
+<a class="font-serif text-lg tracking-tight font-medium Newsreader text-[#1b1c1a]/60 dark:text-[#faf9f5]/60 hover:text-[#008080] transition-colors duration-300 cursor-pointer transition-opacity active:opacity-70" href="#">Advisories</a>
+<a class="font-serif text-lg tracking-tight font-medium Newsreader text-[#1b1c1a]/60 dark:text-[#faf9f5]/60 hover:text-[#008080] transition-colors duration-300 cursor-pointer transition-opacity active:opacity-70" href="#">Network</a>
+<a class="font-serif text-lg tracking-tight font-medium Newsreader text-[#1b1c1a]/60 dark:text-[#faf9f5]/60 hover:text-[#008080] transition-colors duration-300 cursor-pointer transition-opacity active:opacity-70" href="#">Vault</a>
+</nav>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center bg-surface-container-high px-4 py-2 gap-3 group">
+<span class="material-symbols-outlined text-primary scale-90">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm font-label uppercase tracking-widest placeholder:text-outline-variant" placeholder="Search Registries..." type="text"/>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface cursor-pointer hover:text-primary transition-colors" data-icon="notifications">notifications</span>
+<span class="material-symbols-outlined text-on-surface cursor-pointer hover:text-primary transition-colors" data-icon="settings">settings</span>
+<div class="w-8 h-8 bg-surface-container-highest flex items-center justify-center overflow-hidden">
+<img alt="Chief Auditor Profile" class="w-full h-full object-cover" data-alt="Close-up portrait of a professional male auditor in a neutral architectural setting with soft dramatic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAxBD7mDvQQOD4gC7I2muUSTZ9CNTB5DqwyB9ez1Xyn6hMq6pN6loRGgi3MB3TgoaeN-u9SwEa27Ce395dZs5UHlzrOosgs7N546E0I3di-iLkwRHrENpQRF-vVLv5cNtGNGKlV9eUhFjvkhjdrrOquuyIJKn73CpqfHbjy3BUh6NS-CHNmm8Q0kIuiKCDsO-4k1apHhm8F-KHuv5glOBBa-RkjuNXYFeckk-0qjSjfd7HLHsj7Xha2GTMfiFdELZ-lgYNzZyjBE8"/>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-[#f4f4f0] dark:bg-[#2a2b28] h-[1px] w-full"></div>
+</header>
+<div class="flex pt-[88px] h-screen overflow-hidden">
+<!-- Side Navigation Bar -->
+<aside class="bg-[#f4f4f0] dark:bg-[#1b1c1a] h-full w-72 flex flex-col py-12 px-6 space-y-8 flex-shrink-0">
+<div class="space-y-1">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">security</span>
+</div>
+<div>
+<h3 class="font-label uppercase text-[10px] tracking-[0.2em] text-outline">Protocol Filter</h3>
+<p class="font-mono text-[9px] text-tertiary">Registry v.4.0.2</p>
+</div>
+</div>
+</div>
+<nav class="flex-grow space-y-2">
+<button class="w-full flex items-center gap-4 px-4 py-3 bg-white dark:bg-[#2a2b28] text-[#008080] font-bold transition-transform active:scale-95">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="font-label uppercase text-xs tracking-widest">All Registries</span>
+</button>
+<button class="w-full flex items-center gap-4 px-4 py-3 text-[#1b1c1a]/80 dark:text-[#faf9f5]/80 hover:bg-[#e9e8e4] dark:hover:bg-[#2a2b28] transition-all duration-200 active:scale-95">
+<span class="material-symbols-outlined" data-icon="grid_4x4">grid_4x4</span>
+<span class="font-label uppercase text-xs tracking-widest">Lattice-Based</span>
+</button>
+<button class="w-full flex items-center gap-4 px-4 py-3 text-[#1b1c1a]/80 dark:text-[#faf9f5]/80 hover:bg-[#e9e8e4] dark:hover:bg-[#2a2b28] transition-all duration-200 active:scale-95">
+<span class="material-symbols-outlined" data-icon="account_tree">account_tree</span>
+<span class="font-label uppercase text-xs tracking-widest">Isogeny-Based</span>
+</button>
+<button class="w-full flex items-center gap-4 px-4 py-3 text-[#1b1c1a]/80 dark:text-[#faf9f5]/80 hover:bg-[#e9e8e4] dark:hover:bg-[#2a2b28] transition-all duration-200 active:scale-95">
+<span class="material-symbols-outlined" data-icon="tag">tag</span>
+<span class="font-label uppercase text-xs tracking-widest">Hash-Based</span>
+</button>
+<button class="w-full flex items-center gap-4 px-4 py-3 text-[#1b1c1a]/80 dark:text-[#faf9f5]/80 hover:bg-[#e9e8e4] dark:hover:bg-[#2a2b28] transition-all duration-200 active:scale-95">
+<span class="material-symbols-outlined" data-icon="terminal">terminal</span>
+<span class="font-label uppercase text-xs tracking-widest">Code-Based</span>
+</button>
+</nav>
+<div class="pt-8 border-t border-outline-variant/20 space-y-2">
+<button class="w-full flex items-center gap-4 px-4 py-2 text-[#1b1c1a]/60 text-[10px] font-label uppercase tracking-widest hover:text-primary transition-colors">
+<span class="material-symbols-outlined scale-75" data-icon="history_edu">history_edu</span>
+                    Archived Reports
+                </button>
+<button class="w-full flex items-center gap-4 px-4 py-2 text-[#1b1c1a]/60 text-[10px] font-label uppercase tracking-widest hover:text-primary transition-colors">
+<span class="material-symbols-outlined scale-75" data-icon="dns">dns</span>
+                    System Status
+                </button>
+</div>
+<button class="bg-secondary text-on-secondary px-6 py-4 font-label uppercase text-xs tracking-widest font-bold transition-transform active:scale-95">
+                New Audit Request
+            </button>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-grow overflow-y-auto custom-scrollbar bg-surface-container-low px-12 py-10">
+<header class="mb-12 max-w-4xl">
+<div class="flex items-center gap-4 mb-2">
+<span class="font-label text-[10px] uppercase tracking-[0.3em] text-primary font-bold">Registry Directory</span>
+<div class="h-[1px] w-12 bg-primary"></div>
+</div>
+<h1 class="font-serif text-6xl font-bold text-on-surface leading-tight tracking-tighter mb-4 italic">Post-Quantum Resilience Index</h1>
+<p class="text-on-surface-variant max-w-2xl text-lg Newsreader italic opacity-80">
+                    A real-time comprehensive audit of decentralized infrastructure against emerging lattice and isogeny-based cryptographic threats.
+                </p>
+</header>
+<div class="w-full overflow-hidden bg-white">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-high">
+<th class="px-6 py-4 font-label text-[10px] uppercase tracking-widest text-outline">Protocol Identifier</th>
+<th class="px-6 py-4 font-label text-[10px] uppercase tracking-widest text-outline">Readiness Score</th>
+<th class="px-6 py-4 font-label text-[10px] uppercase tracking-widest text-outline">Risk Vector</th>
+<th class="px-6 py-4 font-label text-[10px] uppercase tracking-widest text-outline">Audit Timestamp</th>
+<th class="px-6 py-4 font-label text-[10px] uppercase tracking-widest text-outline text-right">Liquidity Delta</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-low">
+<tr class="hover:bg-surface-container-lowest transition-colors cursor-pointer group bg-white">
+<td class="px-6 py-8">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 bg-primary-fixed flex items-center justify-center text-primary font-bold text-xs font-label">UN-V3</div>
+<div>
+<div class="font-serif text-xl font-bold tracking-tight">Uniswap V3</div>
+<div class="font-label text-[9px] uppercase tracking-widest text-outline">Layer: Execution</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-8">
+<div class="flex items-center gap-3">
+<span class="font-serif text-3xl font-bold text-primary">84</span>
+<div class="w-24 h-1 bg-surface-container-highest">
+<div class="h-full bg-primary w-[84%]"></div>
+</div>
+</div>
+</td>
+<td class="px-6 py-8">
+<span class="px-3 py-1 bg-error-container text-on-error-container font-label text-[10px] uppercase tracking-widest font-bold">Elevated</span>
+</td>
+<td class="px-6 py-8">
+<div class="font-mono text-xs opacity-60">2023.10.12 // 09:44</div>
+</td>
+<td class="px-6 py-8 text-right">
+<span class="font-mono text-xs text-primary">+12.4M</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-lowest transition-colors cursor-pointer group bg-surface-container-lowest border-l-4 border-primary">
+<td class="px-6 py-8">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 bg-secondary-fixed flex items-center justify-center text-secondary font-bold text-xs font-label">AAVE-2</div>
+<div>
+<div class="font-serif text-xl font-bold tracking-tight">Aave V2</div>
+<div class="font-label text-[9px] uppercase tracking-widest text-outline text-secondary">Layer: Lending</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-8">
+<div class="flex items-center gap-3">
+<span class="font-serif text-3xl font-bold text-secondary">62</span>
+<div class="w-24 h-1 bg-surface-container-highest">
+<div class="h-full bg-secondary w-[62%]"></div>
+</div>
+</div>
+</td>
+<td class="px-6 py-8">
+<span class="px-3 py-1 bg-[#ba1a1a] text-white font-label text-[10px] uppercase tracking-widest font-bold">Critical</span>
+</td>
+<td class="px-6 py-8">
+<div class="font-mono text-xs opacity-60">2023.11.01 // 14:20</div>
+</td>
+<td class="px-6 py-8 text-right">
+<span class="font-mono text-xs text-error">-4.1M</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-lowest transition-colors cursor-pointer group bg-white">
+<td class="px-6 py-8">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 bg-surface-container-highest flex items-center justify-center text-tertiary font-bold text-xs font-label">MKR-D</div>
+<div>
+<div class="font-serif text-xl font-bold tracking-tight">MakerDAO</div>
+<div class="font-label text-[9px] uppercase tracking-widest text-outline">Layer: Stablecoin</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-8">
+<div class="flex items-center gap-3">
+<span class="font-serif text-3xl font-bold text-primary">91</span>
+<div class="w-24 h-1 bg-surface-container-highest">
+<div class="h-full bg-primary w-[91%]"></div>
+</div>
+</div>
+</td>
+<td class="px-6 py-8">
+<span class="px-3 py-1 bg-surface-container-high text-on-surface-variant font-label text-[10px] uppercase tracking-widest font-bold">Secure</span>
+</td>
+<td class="px-6 py-8">
+<div class="font-mono text-xs opacity-60">2023.11.08 // 23:15</div>
+</td>
+<td class="px-6 py-8 text-right">
+<span class="font-mono text-xs text-primary">+0.8M</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="mt-12 grid grid-cols-2 gap-8">
+<div class="bg-primary p-12 text-white relative overflow-hidden group">
+<div class="relative z-10">
+<span class="font-label text-[10px] uppercase tracking-[0.3em] text-primary-fixed mb-4 block">System Brief</span>
+<h2 class="font-serif text-4xl font-bold mb-6 italic leading-tight">Quantum Vulnerability Forecast 2024</h2>
+<p class="font-body text-sm opacity-90 leading-relaxed mb-8 max-w-md">Our latest heuristic model suggests that isogeny-based vulnerabilities will likely pose a critical threat to EVM-compatible chains by Q3 of next year.</p>
+<a class="inline-flex items-center gap-4 font-label text-[10px] uppercase tracking-widest border-b-2 border-white pb-1 group-hover:gap-6 transition-all" href="#">Download Executive Summary <span class="material-symbols-outlined scale-75">arrow_forward</span></a>
+</div>
+<div class="absolute right-0 bottom-0 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-[200px]" style="font-variation-settings: 'FILL' 1;">analytics</span>
+</div>
+</div>
+<div class="bg-surface-container-highest p-12 text-on-surface flex flex-col justify-center">
+<span class="font-label text-[10px] uppercase tracking-[0.3em] text-outline mb-4 block">Live Network Status</span>
+<div class="space-y-6">
+<div class="flex justify-between items-end border-b border-outline/10 pb-4">
+<span class="font-serif text-lg italic">Global Registry Nodes</span>
+<span class="font-mono text-2xl font-bold text-primary">1,402</span>
+</div>
+<div class="flex justify-between items-end border-b border-outline/10 pb-4">
+<span class="font-serif text-lg italic">Audit Backlog (P0)</span>
+<span class="font-mono text-2xl font-bold text-secondary">24</span>
+</div>
+<div class="flex justify-between items-end">
+<span class="font-serif text-lg italic">Hash-Resilience Mean</span>
+<span class="font-mono text-2xl font-bold">89.2%</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Right Side Inspector Rail -->
+<aside class="w-[400px] bg-white border-l border-outline/10 flex-shrink-0 flex flex-col overflow-y-auto custom-scrollbar">
+<div class="p-10">
+<div class="flex justify-between items-start mb-10">
+<div class="p-4 bg-secondary-fixed text-secondary">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">shield_with_heart</span>
+</div>
+<div class="text-right">
+<span class="font-label text-[10px] uppercase tracking-widest text-outline block mb-1">Status</span>
+<span class="font-label text-[10px] uppercase tracking-widest text-white bg-secondary px-2 py-0.5 font-bold">Pending Review</span>
+</div>
+</div>
+<h2 class="font-serif text-3xl font-bold tracking-tighter mb-2 italic">Aave V2 Deep Dive</h2>
+<p class="font-label text-[10px] uppercase tracking-widest text-outline mb-10">Asset Deployment Architecture</p>
+<div class="space-y-12">
+<section>
+<h3 class="font-label text-[10px] uppercase tracking-[0.2em] text-primary font-bold mb-6 border-b border-primary/20 pb-2">Technical Breakdown</h3>
+<div class="space-y-6">
+<div>
+<div class="flex justify-between font-label text-[11px] uppercase tracking-widest mb-2">
+<span>Signature Algorithm</span>
+<span class="text-secondary font-bold">ECDSA-256 (Legacy)</span>
+</div>
+<div class="h-1.5 bg-surface-container-high w-full">
+<div class="h-full bg-secondary w-[40%]"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between font-label text-[11px] uppercase tracking-widest mb-2">
+<span>Hash Resilience</span>
+<span class="text-primary font-bold">Sha-3 Optimized</span>
+</div>
+<div class="h-1.5 bg-surface-container-high w-full">
+<div class="h-full bg-primary w-[75%]"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between font-label text-[11px] uppercase tracking-widest mb-2">
+<span>Upgradeability Path</span>
+<span class="font-bold">Proxy-Diamond</span>
+</div>
+<div class="h-1.5 bg-surface-container-high w-full">
+<div class="h-full bg-on-background w-[90%]"></div>
+</div>
+</div>
+</div>
+</section>
+<section>
+<h3 class="font-label text-[10px] uppercase tracking-[0.2em] text-primary font-bold mb-6 border-b border-primary/20 pb-2">Readiness Signals</h3>
+<div class="space-y-4">
+<div class="flex items-start gap-4 bg-surface-container px-4 py-4 group hover:bg-secondary-fixed transition-colors">
+<span class="material-symbols-outlined text-secondary" data-icon="warning" style="font-variation-settings: 'FILL' 1;">warning</span>
+<div>
+<p class="font-serif text-sm font-bold italic mb-1">Key Rotation Vulnerability</p>
+<p class="text-[11px] Newsreader leading-relaxed opacity-70">Legacy multisig configuration lacks post-quantum secure key rotation protocols.</p>
+</div>
+</div>
+<div class="flex items-start gap-4 bg-surface-container px-4 py-4 group hover:bg-primary-fixed transition-colors">
+<span class="material-symbols-outlined text-primary" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div>
+<p class="font-serif text-sm font-bold italic mb-1">Lattice-Compatible Vaults</p>
+<p class="text-[11px] Newsreader leading-relaxed opacity-70">Infrastructure is ready for integration with Kyber-based signing mechanisms.</p>
+</div>
+</div>
+</div>
+</section>
+<div class="pt-8">
+<button class="w-full bg-on-background text-background py-5 font-label uppercase text-xs tracking-[0.2em] font-bold hover:bg-primary transition-colors">
+                            Initiate Protocol Audit
+                        </button>
+</div>
+</div>
+</div>
+<div class="mt-auto p-10 bg-surface-container-high">
+<img alt="Abstract Cryptography Data" class="w-full h-48 object-cover mb-6" data-alt="Stylized 3D rendering of abstract geometric data structures with teal and orange light reflections against a dark technical background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3lzNK88JeVnbMac6_lgk7afvLTnRCRMnI1nPBj8Jfu1qHFlkoYgoqSJznWIRiLGVQJsPs_0-DOuWFFR1kDAeFy8X5hMKzoQygfD5mBnWEpfDyS2PZ4upcjF16gs9FvbsJZeima-Td336vckR3m1yT0FaYKLxEHc9vpqyZo4rm-fV1Sfj_8ECvEzu7U5N1t6srAgIXRaQZjoME7jjOVJ1pE-bq4AgiBuXMn1K0d_a9nVhHpw03H2nuHHb-PYMooX_337qcmrk4z7U"/>
+<p class="font-serif italic text-sm text-on-surface-variant text-center">"The only way to predict the future of cryptography is to invent the registry that catalogues its obsolescence."</p>
+</div>
+</aside>
+</div>
+</body></html>

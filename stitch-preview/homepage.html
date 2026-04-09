@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PQBEAT | Post-Quantum Ethereum Analytics</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Inter:wght@100..900&amp;family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed-variant": "#004f4f",
+                        "primary-fixed-dim": "#76d6d5",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "surface-container-highest": "#e3e2df",
+                        "surface": "#faf9f5",
+                        "background": "#faf9f5",
+                        "surface-container-high": "#e9e8e4",
+                        "on-primary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "secondary-container": "#fdad67",
+                        "on-secondary-container": "#763f00",
+                        "tertiary": "#5b5a5a",
+                        "on-error-container": "#93000a",
+                        "surface-variant": "#e3e2df",
+                        "on-surface-variant": "#3e4949",
+                        "surface-bright": "#faf9f5",
+                        "surface-container": "#efeeea",
+                        "on-surface": "#1b1c1a",
+                        "secondary-fixed-dim": "#ffb77b",
+                        "secondary-fixed": "#ffdcc2",
+                        "on-tertiary-container": "#fcf8f8",
+                        "secondary": "#8c4f10",
+                        "on-primary-container": "#e3fffe",
+                        "tertiary-container": "#737272",
+                        "inverse-on-surface": "#f2f1ed",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "primary-container": "#008080",
+                        "on-secondary": "#ffffff",
+                        "surface-dim": "#dbdad6",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "tertiary-fixed": "#e5e2e1",
+                        "outline-variant": "#bdc9c8",
+                        "inverse-surface": "#2f312e",
+                        "on-primary-fixed": "#002020",
+                        "surface-container-low": "#f4f4f0",
+                        "on-secondary-fixed": "#2e1500",
+                        "on-background": "#1b1c1a",
+                        "primary": "#006565",
+                        "on-error": "#ffffff",
+                        "inverse-primary": "#76d6d5",
+                        "on-secondary-fixed-variant": "#6d3a00",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "error": "#ba1a1a",
+                        "surface-tint": "#006a6a",
+                        "primary-fixed": "#93f2f2",
+                        "outline": "#6e7979"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Newsreader", "serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Space Grotesk", "monospace"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24
+    }
+body {
+    background-color: #faf9f5;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuABxhRTIPwXnGZz7KVFE6COUM3wuQVWW_RXtiIBkRQ_vL-2Ve7-ruCfUn4OGreWn_3TN93Y0uE8ZwcxQWbvzO6ZqacsBDySzowiEGbRjbd_6H2cLX1iurGaSnNm8jP8OLm-db4_Ya73QTUiOoNh8l5W2clgKPJfCoiW2_ipxSaz7wSICbDj0-MWF9jSxHOQv-b1-NaCmngTS822allVXiMa2GwnOzOywCK7hlzbA9qFBF7YVZjsRoV3VZowWuoLigUH-iQBMQIoW5E)
+    }
+.editorial-grid {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 64px
+    }
+@media (max-width: 1024px) {
+    .editorial-grid {
+        grid-template-columns: 1fr
+        }
+    }</style>
+</head>
+<body class="font-body text-on-surface">
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 w-full z-50 bg-[#faf9f5] dark:bg-stone-950/80 backdrop-blur-xl">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-screen-2xl mx-auto">
+<div class="text-2xl font-black tracking-tighter text-[#1b1c1a] dark:text-stone-100 font-serif">PQBEAT</div>
+<div class="hidden md:flex items-center space-x-8 font-serif text-sm tracking-tight Newsreader">
+<a class="text-[#008080] border-b-2 border-[#008080] pb-1 hover:text-[#006565] transition-colors duration-300" href="#">Overview</a>
+<a class="text-[#1b1c1a] dark:text-stone-400 opacity-70 hover:text-[#006565] transition-colors duration-300" href="#">Registry</a>
+<a class="text-[#1b1c1a] dark:text-stone-400 opacity-70 hover:text-[#006565] transition-colors duration-300" href="#">Deep Dive</a>
+</div>
+<div class="flex items-center space-x-6">
+<button class="material-symbols-outlined text-primary hover:opacity-80 transition-opacity">analytics</button>
+<button class="material-symbols-outlined text-primary hover:opacity-80 transition-opacity">settings</button>
+<div class="w-8 h-8 bg-surface-container-high overflow-hidden">
+<img alt="Researcher Profile" class="w-full h-full object-cover grayscale" data-alt="Close-up portrait of a professional researcher in a clean studio setting with soft natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3NiTuZCkOLwg1Q-fvItnkxp1ElKk8vhSji3vi-IuUzyitU5tkxXNt-RFBDY3hLLBnhCaJQ01V737bxXSid2iYI62fhYKyAx5XFKKokth2suyPBNlgk82RXTgPvTuhIgJMVjm-p6vagYuqF2gX3gslx3N1tEjG6u_ZgFCpyTrBKc28TcSqAQEt-kgXQ7KdNdBJMvKRZzw5VCVxYgs6aSh2RpbVJhSAulE345fKvnvLTeYDzCSJltWOb9celczXyadnJW7Y_e3f-x8"/>
+</div>
+</div>
+</div>
+</nav>
+<main class="pt-32 pb-24 px-8 max-w-screen-2xl mx-auto">
+<!-- Hero Section -->
+<section class="mb-24">
+<div class="max-w-4xl">
+<span class="font-label text-xs uppercase tracking-widest text-secondary mb-4 block">Archive Intelligence v2.4</span>
+<h1 class="font-headline text-7xl font-light leading-tight tracking-tight mb-8">
+                    Tracking <span class="italic">Quantum Readiness</span> Across the Ethereum Stack
+                </h1>
+<p class="font-body text-xl text-tertiary leading-relaxed max-w-2xl mb-12">
+                    An editorial deep-dive into the cryptographic vulnerabilities of blockchain infrastructure. We catalog the transition from classical ECDSA to post-quantum standards across execution layers and rollups.
+                </p>
+<div class="flex space-x-4">
+<button class="bg-primary text-on-primary px-8 py-4 font-label text-sm uppercase tracking-widest hover:bg-[#004f4f] transition-colors">
+                        Explore the Registry
+                    </button>
+<button class="border-2 border-primary text-primary px-8 py-4 font-label text-sm uppercase tracking-widest hover:bg-surface-container-low transition-colors">
+                        Read the Deep Dive
+                    </button>
+</div>
+</div>
+</section>
+<!-- KPI Cards -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-0 mb-24 bg-surface-container-low">
+<div class="p-8 border-r border-outline-variant/20">
+<span class="font-label text-[10px] uppercase tracking-widest text-tertiary block mb-2">Total Entities Tracked</span>
+<div class="font-headline text-4xl">1,428</div>
+<div class="mt-4 flex items-center text-primary text-xs font-label">
+<span class="material-symbols-outlined text-sm mr-1">trending_up</span> +12% this month
+                </div>
+</div>
+<div class="p-8 border-r border-outline-variant/20">
+<span class="font-label text-[10px] uppercase tracking-widest text-tertiary block mb-2">Avg. Risk Score</span>
+<div class="font-headline text-4xl">6.2<span class="text-lg text-tertiary ml-1">/10</span></div>
+<div class="mt-4 flex items-center text-error text-xs font-label">
+<span class="material-symbols-outlined text-sm mr-1">warning</span> Critical Exposure
+                </div>
+</div>
+<div class="p-8 border-r border-outline-variant/20">
+<span class="font-label text-[10px] uppercase tracking-widest text-tertiary block mb-2">Network Security %</span>
+<div class="font-headline text-4xl">42.8%</div>
+<div class="mt-4 flex items-center text-secondary text-xs font-label">
+<span class="material-symbols-outlined text-sm mr-1">security</span> NIST Standard L1
+                </div>
+</div>
+<div class="p-8">
+<span class="font-label text-[10px] uppercase tracking-widest text-tertiary block mb-2">Research Updates</span>
+<div class="font-headline text-4xl">24</div>
+<div class="mt-4 flex items-center text-primary text-xs font-label">
+<span class="material-symbols-outlined text-sm mr-1">history</span> Last 48 hours
+                </div>
+</div>
+</div>
+<div class="editorial-grid">
+<!-- Left Column: Primary Content -->
+<div class="space-y-32">
+<!-- Ecosystem Breakdown -->
+<section>
+<div class="flex items-baseline justify-between mb-12">
+<h2 class="font-headline text-4xl italic">Ecosystem Breakdown</h2>
+<div class="h-[1px] flex-grow mx-8 bg-outline-variant/30"></div>
+<span class="font-label text-xs uppercase text-tertiary">Layer Distribution</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-1">
+<div class="bg-surface-container-low p-10 group hover:bg-surface-container-high transition-colors">
+<span class="font-label text-[10px] text-primary tracking-widest mb-4 block">01 / Infrastructure</span>
+<h3 class="font-headline text-2xl mb-4">Execution Accounts</h3>
+<p class="text-sm text-tertiary leading-relaxed mb-6">Transitioning legacy EOA addresses to PQC-ready abstraction layers.</p>
+<div class="w-full bg-surface-container-highest h-1">
+<div class="bg-primary h-full w-[15%]"></div>
+</div>
+</div>
+<div class="bg-surface-container-low p-10 group hover:bg-surface-container-high transition-colors">
+<span class="font-label text-[10px] text-primary tracking-widest mb-4 block">02 / Consensus</span>
+<h3 class="font-headline text-2xl mb-4">Validators</h3>
+<p class="text-sm text-tertiary leading-relaxed mb-6">Aggregating BLS signatures and future Lamport one-time signature integration.</p>
+<div class="w-full bg-surface-container-highest h-1">
+<div class="bg-primary h-full w-[28%]"></div>
+</div>
+</div>
+<div class="bg-surface-container-low p-10 group hover:bg-surface-container-high transition-colors">
+<span class="font-label text-[10px] text-primary tracking-widest mb-4 block">03 / Scaling</span>
+<h3 class="font-headline text-2xl mb-4">Rollups</h3>
+<p class="text-sm text-tertiary leading-relaxed mb-6">ZK-STARK based proof systems with inherently quantum-resistant properties.</p>
+<div class="w-full bg-surface-container-highest h-1">
+<div class="bg-primary h-full w-[64%]"></div>
+</div>
+</div>
+<div class="bg-surface-container-low p-10 group hover:bg-surface-container-high transition-colors">
+<span class="font-label text-[10px] text-primary tracking-widest mb-4 block">04 / Connectivity</span>
+<h3 class="font-headline text-2xl mb-4">Smart-Account Wallets</h3>
+<p class="text-sm text-tertiary leading-relaxed mb-6">ERC-4337 compatibility for multi-sig and quantum recovery modules.</p>
+<div class="w-full bg-surface-container-highest h-1">
+<div class="bg-primary h-full w-[39%]"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Risk Visualization -->
+<section class="bg-on-surface text-surface p-16">
+<div class="max-w-xl mb-16">
+<span class="font-label text-[10px] uppercase text-secondary tracking-widest mb-4 block">Intelligence Insight</span>
+<h2 class="font-headline text-5xl mb-6">Risk Indicators</h2>
+<p class="font-body text-surface-container-highest opacity-70">A qualitative mapping of cryptographic surface area vulnerabilities relative to the estimated arrival of Shor's algorithm viability.</p>
+</div>
+<div class="space-y-8">
+<div class="flex items-center">
+<div class="w-4 h-4 bg-error mr-6"></div>
+<div class="flex-grow">
+<div class="flex justify-between mb-2">
+<span class="font-label text-xs uppercase tracking-widest">High Probability / Classical ECDSA</span>
+<span class="font-label text-xs">82% Exposure</span>
+</div>
+<div class="h-px bg-surface-container-highest/20"></div>
+</div>
+</div>
+<div class="flex items-center">
+<div class="w-4 h-4 bg-secondary-container mr-6"></div>
+<div class="flex-grow">
+<div class="flex justify-between mb-2">
+<span class="font-label text-xs uppercase tracking-widest">Medium Probability / Hybrid Key Exchange</span>
+<span class="font-label text-xs">14% Exposure</span>
+</div>
+<div class="h-px bg-surface-container-highest/20"></div>
+</div>
+</div>
+<div class="flex items-center">
+<div class="w-4 h-4 bg-primary mr-6"></div>
+<div class="flex-grow">
+<div class="flex justify-between mb-2">
+<span class="font-label text-xs uppercase tracking-widest">Low Probability / Lattice-Based PQC</span>
+<span class="font-label text-xs">4% Exposure</span>
+</div>
+<div class="h-px bg-surface-container-highest/20"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Benchmark Table -->
+<section>
+<div class="mb-12">
+<h2 class="font-headline text-4xl mb-4">Algorithm Benchmark</h2>
+<p class="font-body text-tertiary text-sm">Tracking NIST-selected candidate performance on Ethereum EVM targets.</p>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse">
+<thead>
+<tr class="bg-surface-container text-left">
+<th class="p-6 font-label text-[10px] uppercase tracking-widest">Algorithm</th>
+<th class="p-6 font-label text-[10px] uppercase tracking-widest">PubKey Size (B)</th>
+<th class="p-6 font-label text-[10px] uppercase tracking-widest">Sig Size (B)</th>
+<th class="p-6 font-label text-[10px] uppercase tracking-widest">Gas Cost Est.</th>
+<th class="p-6 font-label text-[10px] uppercase tracking-widest">Status</th>
+</tr>
+</thead>
+<tbody class="text-sm">
+<tr class="bg-surface hover:bg-surface-container-low transition-colors">
+<td class="p-6 font-bold border-b border-outline-variant/10">Dilithium2</td>
+<td class="p-6 border-b border-outline-variant/10">1,312</td>
+<td class="p-6 border-b border-outline-variant/10">2,420</td>
+<td class="p-6 border-b border-outline-variant/10 font-label text-primary">~1.2M</td>
+<td class="p-6 border-b border-outline-variant/10"><span class="bg-primary/10 text-primary px-3 py-1 font-label text-[10px] uppercase">Finalist</span></td>
+</tr>
+<tr class="bg-surface hover:bg-surface-container-low transition-colors">
+<td class="p-6 font-bold border-b border-outline-variant/10">Falcon-512</td>
+<td class="p-6 border-b border-outline-variant/10">897</td>
+<td class="p-6 border-b border-outline-variant/10">666</td>
+<td class="p-6 border-b border-outline-variant/10 font-label text-primary">~450k</td>
+<td class="p-6 border-b border-outline-variant/10"><span class="bg-secondary/10 text-secondary px-3 py-1 font-label text-[10px] uppercase">Selected</span></td>
+</tr>
+<tr class="bg-surface hover:bg-surface-container-low transition-colors">
+<td class="p-6 font-bold border-b border-outline-variant/10">SPHINCS+</td>
+<td class="p-6 border-b border-outline-variant/10">32</td>
+<td class="p-6 border-b border-outline-variant/10">7,856</td>
+<td class="p-6 border-b border-outline-variant/10 font-label text-primary">~5.8M</td>
+<td class="p-6 border-b border-outline-variant/10"><span class="bg-tertiary/10 text-tertiary px-3 py-1 font-label text-[10px] uppercase">Stateless</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</div>
+<!-- Right Column: Insight Rail -->
+<aside class="space-y-12">
+<div class="bg-surface-container-high p-8">
+<span class="font-label text-[10px] uppercase tracking-widest text-secondary block mb-4">Latest Review</span>
+<div class="font-headline text-3xl mb-2">Nov 14, 2024</div>
+<p class="text-xs text-tertiary leading-relaxed mb-6">Current snapshot includes the latest P2P layer audits for Geth and Nethermind clients.</p>
+<div class="h-px bg-outline-variant/30 mb-6"></div>
+<button class="flex items-center text-xs font-label uppercase tracking-widest text-primary hover:opacity-70 transition-opacity">
+<span class="material-symbols-outlined text-sm mr-2">download</span> Export Dataset
+                    </button>
+</div>
+<div class="p-8 border-l-2 border-primary">
+<h4 class="font-label text-[10px] uppercase tracking-widest text-primary mb-4">Assessment Policy</h4>
+<p class="text-sm italic font-serif leading-relaxed mb-6">"Our methodology favors data integrity over speed. Every entity is vetted through three layers of cryptographic verification."</p>
+<a class="text-xs font-label border-b border-primary pb-1" href="#">Read Full Protocol</a>
+</div>
+<div class="space-y-8">
+<h4 class="font-label text-[10px] uppercase tracking-widest text-tertiary">Priority Watchlist</h4>
+<div class="space-y-6">
+<div class="flex justify-between items-start">
+<div>
+<div class="font-bold text-sm">Legacy Multisig v1</div>
+<div class="text-[10px] font-label text-error uppercase">Critical Vulnerability</div>
+</div>
+<span class="material-symbols-outlined text-error text-lg">gpp_maybe</span>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<div class="font-bold text-sm">Bridge-V Hub</div>
+<div class="text-[10px] font-label text-secondary uppercase">Stale Cryptography</div>
+</div>
+<span class="material-symbols-outlined text-secondary text-lg">schedule</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low p-8">
+<h4 class="font-label text-[10px] uppercase tracking-widest text-tertiary mb-6">Source Intelligence</h4>
+<ul class="space-y-4 text-xs font-body text-tertiary">
+<li><a class="hover:text-primary transition-colors" href="#">• NIST Post-Quantum Drafts</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">• Ethereum EIP-7503 Archive</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">• Cloudflare PQC Experiment</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">• Oxford Quantum Computing Lab</a></li>
+</ul>
+</div>
+</aside>
+</div>
+<!-- Closing CTA Cards -->
+<section class="mt-32 grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="relative group cursor-pointer overflow-hidden aspect-[16/7] bg-secondary flex items-center p-16">
+<div class="z-10 text-on-secondary">
+<span class="font-label text-[10px] uppercase tracking-widest opacity-80 mb-4 block">Community Collaboration</span>
+<h3 class="font-headline text-4xl mb-6">Contribute to the Registry</h3>
+<div class="flex items-center text-xs font-label uppercase tracking-widest border-b border-on-secondary pb-1 w-fit">
+                        Submit Research <span class="material-symbols-outlined ml-2 text-sm">arrow_forward</span>
+</div>
+</div>
+<div class="absolute inset-0 opacity-20 bg-black mix-blend-overlay group-hover:scale-105 transition-transform duration-700">
+<img alt="Server Architecture" class="w-full h-full object-cover grayscale" data-alt="Technical close-up of high-end server rack lighting in a dark data center with teal and amber glowing indicators" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEOq-V5btAwvEL_2jfdbsnLE_sA3lh4MOrYsDt-Yjv7-FRbZ3kLkQ3KDTralm7rH_6ikNuiv1o7nzr1Gxiwy7PnSxK-mWrBwvDJwUzJc9qgyEC6rlJw5CEjuHX-_4iOfnG-xrvG7c1mDs9d3TbUmZiMjTO7rxgnRGKquu_oevc0wamlz8yV40XRDvrYxrpRK-Y7rE39YCetxcK7hOHMZ3flyEB5Yo_4FuRNXjKCWpCqBMzbJC6OZsoIVHT2n4Zae0q6dDSpSuUS6Y"/>
+</div>
+</div>
+<div class="relative group cursor-pointer overflow-hidden aspect-[16/7] bg-primary flex items-center p-16">
+<div class="z-10 text-on-primary">
+<span class="font-label text-[10px] uppercase tracking-widest opacity-80 mb-4 block">Knowledge Base</span>
+<h3 class="font-headline text-4xl mb-6">Read Research Article</h3>
+<div class="flex items-center text-xs font-label uppercase tracking-widest border-b border-on-primary pb-1 w-fit">
+                        Explore Insights <span class="material-symbols-outlined ml-2 text-sm">arrow_forward</span>
+</div>
+</div>
+<div class="absolute inset-0 opacity-20 bg-black mix-blend-overlay group-hover:scale-105 transition-transform duration-700">
+<img alt="Quantum Field" class="w-full h-full object-cover grayscale" data-alt="Conceptual visualization of digital particle fields and neural networks in deep space blues and glowing teals" src="https://lh3.googleusercontent.com/aida-public/AB6AXuClUwsv4J6E5zVugKK283VhG2m2Gt_APDRyxkAH-ZWN0rJmGiY3To_exp7RjBRe4dFckilMULRV6bdTb2LzQjpEjIAQP8pS8Pc_pND7KCvuIq6VkWS_psFlSFfFSsNJPHogfzvQN5r1P-6uKfgXdWv9JmqN7hwsYdX9k8XDHb2syfS4R9xOdJxqXpuAHJF-UNoW0K1qBXH3Vsqgce9EllJj1Ngz_kxxu2JHv_VMsc7BUM2n_NkOreOD6cgf17dYNXa5PxVqdfVX3Kw"/>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#1b1c1a] dark:bg-black text-stone-500 font-sans text-xs">
+<div class="w-full px-8 py-12 flex flex-col md:flex-row justify-between items-center max-w-screen-2xl mx-auto">
+<div class="mb-8 md:mb-0">
+<div class="text-[#faf9f5] font-serif italic text-xl mb-2">PQBEAT</div>
+<p class="max-w-xs leading-relaxed opacity-60">© 2024 PQBEAT Research Analytics. The Modern Archivist System. Independently funded and peer-reviewed.</p>
+</div>
+<div class="flex space-x-12">
+<div class="flex flex-col space-y-4">
+<span class="font-label text-[10px] uppercase tracking-widest text-stone-300">Framework</span>
+<a class="hover:text-white transition-colors" href="#">Methodology</a>
+<a class="hover:text-white transition-colors" href="#">Peer Review</a>
+</div>
+<div class="flex flex-col space-y-4">
+<span class="font-label text-[10px] uppercase tracking-widest text-stone-300">Legal</span>
+<a class="hover:text-white transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-white transition-colors" href="#">Contact</a>
+</div>
+<div class="flex flex-col space-y-4">
+<span class="font-label text-[10px] uppercase tracking-widest text-stone-300">Social</span>
+<a class="hover:text-white transition-colors" href="#">Twitter / X</a>
+<a class="hover:text-white transition-colors" href="#">GitHub</a>
+</div>
+</div>
+<div class="mt-8 md:mt-0 text-right">
+<div class="text-[#b87333] font-label text-[10px] uppercase tracking-widest mb-2">Network Status</div>
+<div class="flex items-center justify-end">
+<span class="w-2 h-2 bg-primary mr-2"></span>
+<span class="text-[#faf9f5]">Operational</span>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

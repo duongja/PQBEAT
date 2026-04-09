@@ -16,18 +16,18 @@ const breakdownLabels: Record<keyof RiskBreakdown, string> = {
 
 export function ScoreBreakdown({ breakdown }: { breakdown: RiskBreakdown }) {
   return (
-    <div className="space-y-4">
+    <div className="space-y-5">
       {(Object.entries(breakdown) as Array<[keyof RiskBreakdown, number]>).map(([key, value]) => (
-        <div key={key} className="space-y-2">
+        <div key={key} className="space-y-3">
           <div className="flex items-center justify-between gap-4 text-sm">
             <span className="font-medium text-foreground">{breakdownLabels[key]}</span>
-            <span className="font-mono text-muted">
+            <span className="font-label text-[11px] tracking-[0.18em] text-muted uppercase">
               {value}/{breakdownMaxima[key]}
             </span>
           </div>
-          <div className="h-2 rounded-full bg-paper">
+          <div className="h-2 bg-surface-high">
             <div
-              className="h-full rounded-full bg-accent"
+              className="h-full bg-gradient-to-r from-accent to-copper"
               style={{ width: `${(value / breakdownMaxima[key]) * 100}%` }}
             />
           </div>

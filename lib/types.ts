@@ -73,7 +73,11 @@ export type ScoredEntity = Entity & {
 
 export type BenchmarkEntry = {
   algorithm: string;
+  publicKeySize: string;
   signatureSize: string;
+  gasCostEstimate: string;
+  statusLabel: string;
+  statusTone: "primary" | "secondary" | "tertiary";
   performanceNote: string;
   ethereumImpact: string;
   maturityNote: string;
