@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary": "#5b5a5a",
+                    "surface-container-highest": "#e3e2df",
+                    "on-tertiary-container": "#fcf8f8",
+                    "on-error": "#ffffff",
+                    "surface-tint": "#006a6a",
+                    "outline-variant": "#bdc9c8",
+                    "secondary-container": "#fdad67",
+                    "tertiary-container": "#737272",
+                    "on-background": "#1b1c1a",
+                    "on-primary": "#ffffff",
+                    "inverse-surface": "#2f312e",
+                    "surface": "#faf9f5",
+                    "on-secondary": "#ffffff",
+                    "inverse-on-surface": "#f2f1ed",
+                    "primary-fixed-dim": "#76d6d5",
+                    "on-tertiary-fixed-variant": "#474746",
+                    "secondary-fixed-dim": "#ffb77b",
+                    "secondary": "#8c4f10",
+                    "background": "#faf9f5",
+                    "tertiary-fixed": "#e5e2e1",
+                    "inverse-primary": "#76d6d5",
+                    "primary-container": "#008080",
+                    "on-primary-fixed": "#002020",
+                    "surface-bright": "#faf9f5",
+                    "primary-fixed": "#93f2f2",
+                    "on-surface-variant": "#3e4949",
+                    "on-primary-fixed-variant": "#004f4f",
+                    "surface-container-lowest": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "tertiary-fixed-dim": "#c8c6c5",
+                    "surface-container-low": "#f4f4f0",
+                    "secondary-fixed": "#ffdcc2",
+                    "outline": "#6e7979",
+                    "on-secondary-fixed": "#2e1500",
+                    "surface-container": "#efeeea",
+                    "on-tertiary": "#ffffff",
+                    "surface-variant": "#e3e2df",
+                    "on-surface": "#1b1c1a",
+                    "surface-dim": "#dbdad6",
+                    "error-container": "#ffdad6",
+                    "surface-container-high": "#e9e8e4",
+                    "primary": "#006565",
+                    "on-tertiary-fixed": "#1c1b1b",
+                    "on-secondary-fixed-variant": "#6d3a00",
+                    "on-secondary-container": "#763f00",
+                    "on-primary-container": "#e3fffe",
+                    "error": "#ba1a1a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Newsreader", "serif"],
+                    "body": ["Inter", "sans-serif"],
+                    "label": ["Space Grotesk", "monospace"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #faf9f5;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 150px 150px;
+            opacity: 0.98;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .grain-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.02;
+            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+        }
+    </style>
+</head>
+<body class="font-body text-on-surface antialiased">
+<div class="grain-overlay"></div>
+<!-- TopNavBar (Shared Component) -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-12 h-20 bg-[#faf9f5]/80 backdrop-blur-xl">
+<div class="text-2xl font-serif font-black tracking-tighter text-[#1b1c1a]">ARCHIVE</div>
+<nav class="hidden md:flex items-center space-x-10">
+<a class="font-serif tracking-tight text-[#1b1c1a]/60 hover:text-[#008080] transition-colors duration-300" href="#">Collections</a>
+<a class="font-serif tracking-tight text-[#008080] border-b-2 border-[#008080] pb-1" href="#">Library</a>
+<a class="font-serif tracking-tight text-[#1b1c1a]/60 hover:text-[#008080] transition-colors duration-300" href="#">Insights</a>
+<a class="font-serif tracking-tight text-[#1b1c1a]/60 hover:text-[#008080] transition-colors duration-300" href="#">About</a>
+</nav>
+<div class="flex items-center gap-6">
+<span class="material-symbols-outlined cursor-pointer text-[#1b1c1a] hover:text-[#008080] transition-colors">account_circle</span>
+</div>
+</header>
+<main class="pt-40 pb-32 max-w-4xl mx-auto px-6">
+<!-- Hero Section -->
+<section class="mb-24 text-center">
+<h1 class="font-headline text-6xl md:text-7xl font-light tracking-tight text-on-surface mb-6">Knowledge Base</h1>
+<p class="max-w-xl mx-auto text-lg text-on-surface-variant font-light leading-relaxed">
+                A streamlined repository of historical records, technical standards, and scholarly whitepapers curated for the modern researcher.
+            </p>
+</section>
+<!-- Search Section -->
+<section class="mb-16">
+<div class="relative max-w-2xl mx-auto">
+<span class="absolute left-6 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline">search</span>
+<input class="w-full pl-16 pr-8 py-5 bg-surface-container-high border-none focus:ring-1 focus:ring-primary text-xl font-headline tracking-tight placeholder:text-outline/50 transition-all duration-300" placeholder="Search the archive..." type="text"/>
+</div>
+</section>
+<!-- Filter Row -->
+<section class="mb-20 border-b border-on-surface/5 pb-4">
+<div class="flex flex-wrap items-center justify-center gap-10">
+<button class="font-label text-xs uppercase tracking-[0.15em] text-primary font-bold border-b-2 border-primary pb-2">All</button>
+<button class="font-label text-xs uppercase tracking-[0.15em] text-on-surface/40 hover:text-on-surface transition-colors pb-2">NIST Standards</button>
+<button class="font-label text-xs uppercase tracking-[0.15em] text-on-surface/40 hover:text-on-surface transition-colors pb-2">Papers</button>
+<button class="font-label text-xs uppercase tracking-[0.15em] text-on-surface/40 hover:text-on-surface transition-colors pb-2">Whitepapers</button>
+<button class="font-label text-xs uppercase tracking-[0.15em] text-on-surface/40 hover:text-on-surface transition-colors pb-2">Case Studies</button>
+</div>
+</section>
+<!-- Content List -->
+<section class="space-y-0">
+<!-- Resource Entry 1 -->
+<article class="group py-12 flex flex-col md:flex-row md:items-baseline justify-between hover:bg-surface-container-low/50 transition-colors px-4 -mx-4">
+<div class="max-w-2xl">
+<div class="flex items-center gap-4 mb-3">
+<span class="font-label text-[10px] uppercase tracking-widest text-primary font-bold">Standard</span>
+<span class="font-label text-[10px] uppercase tracking-widest text-on-surface/30">NIST SP 800-207</span>
+</div>
+<h3 class="font-headline text-3xl font-normal leading-tight mb-2 group-hover:text-primary transition-colors">Zero Trust Architecture and Implementation Guidelines</h3>
+<p class="font-body text-on-surface-variant font-light text-sm mb-4">An abstract on the conceptual framework and foundational principles for network security transformation.</p>
+<div class="flex items-center gap-6 font-label text-[10px] uppercase tracking-widest text-on-surface/40">
+<span>OCT 2023</span>
+<span>OFFICE OF CYBERSECURITY</span>
+</div>
+</div>
+<div class="mt-6 md:mt-0">
+<a class="inline-flex items-center gap-2 font-label text-xs uppercase tracking-widest text-on-surface group-hover:text-secondary transition-colors" href="#">
+                        View <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- Resource Entry 2 -->
+<article class="group py-12 flex flex-col md:flex-row md:items-baseline justify-between hover:bg-surface-container-low/50 transition-colors px-4 -mx-4">
+<div class="max-w-2xl">
+<div class="flex items-center gap-4 mb-3">
+<span class="font-label text-[10px] uppercase tracking-widest text-secondary font-bold">Whitepaper</span>
+<span class="font-label text-[10px] uppercase tracking-widest text-on-surface/30">ARCHIVE-WP-042</span>
+</div>
+<h3 class="font-headline text-3xl font-normal leading-tight mb-2 group-hover:text-primary transition-colors">The Digital Preservation of Cultural Assets</h3>
+<p class="font-body text-on-surface-variant font-light text-sm mb-4">Examining long-term data storage solutions for high-resolution historical digitizations.</p>
+<div class="flex items-center gap-6 font-label text-[10px] uppercase tracking-widest text-on-surface/40">
+<span>AUG 2023</span>
+<span>MUSEUM CONSORTIUM</span>
+</div>
+</div>
+<div class="mt-6 md:mt-0">
+<a class="inline-flex items-center gap-2 font-label text-xs uppercase tracking-widest text-on-surface group-hover:text-secondary transition-colors" href="#">
+                        View <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- Resource Entry 3 -->
+<article class="group py-12 flex flex-col md:flex-row md:items-baseline justify-between hover:bg-surface-container-low/50 transition-colors px-4 -mx-4">
+<div class="max-w-2xl">
+<div class="flex items-center gap-4 mb-3">
+<span class="font-label text-[10px] uppercase tracking-widest text-primary font-bold">Academic Paper</span>
+<span class="font-label text-[10px] uppercase tracking-widest text-on-surface/30">ISSN 2041-1723</span>
+</div>
+<h3 class="font-headline text-3xl font-normal leading-tight mb-2 group-hover:text-primary transition-colors">Semantic Interoperability in Large-Scale Metadata Systems</h3>
+<p class="font-body text-on-surface-variant font-light text-sm mb-4">Research on the challenges of unifying diverse archival schemas for cross-institutional search.</p>
+<div class="flex items-center gap-6 font-label text-[10px] uppercase tracking-widest text-on-surface/40">
+<span>JUN 2023</span>
+<span>UNIVERSITY PRESS</span>
+</div>
+</div>
+<div class="mt-6 md:mt-0">
+<a class="inline-flex items-center gap-2 font-label text-xs uppercase tracking-widest text-on-surface group-hover:text-secondary transition-colors" href="#">
+                        View <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- Resource Entry 4 -->
+<article class="group py-12 flex flex-col md:flex-row md:items-baseline justify-between hover:bg-surface-container-low/50 transition-colors px-4 -mx-4">
+<div class="max-w-2xl">
+<div class="flex items-center gap-4 mb-3">
+<span class="font-label text-[10px] uppercase tracking-widest text-tertiary font-bold">Protocol</span>
+<span class="font-label text-[10px] uppercase tracking-widest text-on-surface/30">IEEE-XPLORE-98</span>
+</div>
+<h3 class="font-headline text-3xl font-normal leading-tight mb-2 group-hover:text-primary transition-colors">Encryption Standards for Distributed Ledger Archival</h3>
+<p class="font-body text-on-surface-variant font-light text-sm mb-4">Technical documentation for securing immutable audit logs in decentralized research networks.</p>
+<div class="flex items-center gap-6 font-label text-[10px] uppercase tracking-widest text-on-surface/40">
+<span>MAY 2023</span>
+<span>IEEE STANDARDS ASSOC.</span>
+</div>
+</div>
+<div class="mt-6 md:mt-0">
+<a class="inline-flex items-center gap-2 font-label text-xs uppercase tracking-widest text-on-surface group-hover:text-secondary transition-colors" href="#">
+                        View <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</article>
+</section>
+<!-- Pagination (Minimal) -->
+<div class="mt-24 flex items-center justify-center gap-8 font-label text-[10px] uppercase tracking-widest">
+<button class="flex items-center gap-2 text-on-surface/30 cursor-not-allowed">
+<span class="material-symbols-outlined text-sm">west</span> Previous
+            </button>
+<div class="flex items-center gap-4">
+<span class="text-on-surface">01</span>
+<span class="text-on-surface/20">/</span>
+<span class="text-on-surface/40">12</span>
+</div>
+<button class="flex items-center gap-2 text-on-surface hover:text-primary transition-colors">
+                Next <span class="material-symbols-outlined text-sm">east</span>
+</button>
+</div>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="w-full bg-[#f4f4f0] py-12 px-12 border-t-[0.5px] border-[#1b1c1a]/10">
+<div class="w-full flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="font-serif italic text-lg text-[#1b1c1a]">The Modern Archivist</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-mono uppercase tracking-[0.05em] text-[10px] text-[#1b1c1a]/40 hover:text-[#b05b3b] transition-colors duration-300" href="#">Terms</a>
+<a class="font-mono uppercase tracking-[0.05em] text-[10px] text-[#1b1c1a]/40 hover:text-[#b05b3b] transition-colors duration-300" href="#">Privacy</a>
+<a class="font-mono uppercase tracking-[0.05em] text-[10px] text-[#1b1c1a]/40 hover:text-[#b05b3b] transition-colors duration-300" href="#">Ethics</a>
+<a class="font-mono uppercase tracking-[0.05em] text-[10px] text-[#1b1c1a]/40 hover:text-[#b05b3b] transition-colors duration-300" href="#">Contact</a>
+</div>
+<div class="font-mono uppercase tracking-[0.05em] text-[10px] text-[#1b1c1a]/60">© 2024 THE MODERN ARCHIVIST. ALL RIGHTS RESERVED.</div>
+</div>
+</footer>
+</body></html>

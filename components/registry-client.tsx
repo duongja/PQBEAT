@@ -693,8 +693,11 @@ export function RegistryClient({ entities }: { entities: ScoredEntity[] }) {
                 <Link href="/" className="transition-colors hover:text-primary">
                   Overview
                 </Link>
-                <Link href="/learn/quantum-risk-in-ethereum" className="transition-colors hover:text-primary">
-                  Deep Dive
+                <Link href="/knowledge-base" className="transition-colors hover:text-primary">
+                  Knowledge Base
+                </Link>
+                <Link href="/blog" className="transition-colors hover:text-primary">
+                  Blog
                 </Link>
                 <span>Source-backed registry</span>
               </div>

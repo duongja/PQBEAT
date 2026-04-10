@@ -19,6 +19,7 @@ const collaborationImage =
   "https://lh3.googleusercontent.com/aida-public/AB6AXuCEOq-V5btAwvEL_2jfdbsnLE_sA3lh4MOrYsDt-Yjv7-FRbZ3kLkQ3KDTralm7rH_6ikNuiv1o7nzr1Gxiwy7PnSxK-mWrBwvDJwUzJc9qgyEC6rlJw5CEjuHX-_4iOfnG-xrvG7c1mDs9d3TbUmZiMjTO7rxgnRGKquu_oevc0wamlz8yV40XRDvrYxrpRK-Y7rE39YCetxcK7hOHMZ3flyEB5Yo_4FuRNXjKCWpCqBMzbJC6OZsoIVHT2n4Zae0q6dDSpSuUS6Y";
 const insightsImage =
   "https://lh3.googleusercontent.com/aida-public/AB6AXuClUwsv4J6E5zVugKK283VhG2m2Gt_APDRyxkAH-ZWN0rJmGiY3To_exp7RjBRe4dFckilMULRV6bdTb2LzQjpEjIAQP8pS8Pc_pND7KCvuIq6VkWS_psFlSFfFSsNJPHogfzvQN5r1P-6uKfgXdWv9JmqN7hwsYdX9k8XDHb2syfS4R9xOdJxqXpuAHJF-UNoW0K1qBXH3Vsqgce9EllJj1Ngz_kxxu2JHv_VMsc7BUM2n_NkOreOD6cgf17dYNXa5PxVqdfVX3Kw";
+const githubContributionUrl = "https://github.com/duongja/PQBEAT/issues/new";
 
 const ecosystemCards = [
   {
@@ -44,21 +45,6 @@ const ecosystemCards = [
     title: "Smart-Account Wallets",
     description: layerBriefs[3].description,
     width: "39%",
-  },
-] as const;
-
-const footerColumns = [
-  {
-    heading: "Framework",
-    links: ["Methodology", "Peer Review"],
-  },
-  {
-    heading: "Legal",
-    links: ["Privacy Policy", "Contact"],
-  },
-  {
-    heading: "Social",
-    links: ["Twitter / X", "GitHub"],
   },
 ] as const;
 
@@ -381,8 +367,10 @@ export default function Home() {
         </div>
 
         <section className="mt-32 grid grid-cols-1 gap-8 md:grid-cols-2">
-          <Link
-            href="/registry"
+          <a
+            href={githubContributionUrl}
+            target="_blank"
+            rel="noreferrer"
             className="group relative aspect-[16/7] overflow-hidden bg-secondary p-10 text-white sm:p-16"
           >
             <div className="relative z-10 max-w-[30rem] [text-shadow:0_2px_14px_rgba(0,0,0,0.72)]">
@@ -393,7 +381,7 @@ export default function Home() {
                 Contribute to the Registry
               </h3>
               <div className="flex w-fit items-center border-b border-white/90 pb-1 font-label text-sm font-bold uppercase tracking-[0.22em] text-white">
-                Submit Research <Icon name="arrow-right" className="ml-2 h-3.5 w-3.5" />
+                Submit Research on GitHub <Icon name="arrow-up-right" className="ml-2 h-3.5 w-3.5" />
               </div>
             </div>
             <div className="absolute inset-0">
@@ -405,10 +393,10 @@ export default function Home() {
               />
               <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,0,0.82)_0%,rgba(0,0,0,0.62)_42%,rgba(0,0,0,0.42)_100%)]" />
             </div>
-          </Link>
+          </a>
 
           <Link
-            href="/learn/quantum-risk-in-ethereum"
+            href="/knowledge-base"
             className="group relative aspect-[16/7] overflow-hidden bg-primary p-10 text-white sm:p-16"
           >
             <div className="relative z-10 max-w-[30rem] [text-shadow:0_2px_14px_rgba(0,0,0,0.72)]">
@@ -416,10 +404,10 @@ export default function Home() {
                 Knowledge Base
               </span>
               <h3 className="mb-6 font-headline text-4xl font-semibold text-[#fbfffe] sm:text-[2.7rem]">
-                Read Research Article
+                Browse Public Research
               </h3>
               <div className="flex w-fit items-center border-b border-white/90 pb-1 font-label text-sm font-bold uppercase tracking-[0.22em] text-white">
-                Explore Insights <Icon name="arrow-right" className="ml-2 h-3.5 w-3.5" />
+                Open Knowledge Base <Icon name="arrow-right" className="ml-2 h-3.5 w-3.5" />
               </div>
             </div>
             <div className="absolute inset-0">
@@ -446,33 +434,27 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="mx-auto mt-12 flex w-full max-w-screen-2xl flex-col items-center justify-between gap-8 border-t border-white/10 px-8 py-12 md:flex-row md:items-end">
+        <div className="mx-auto mt-12 flex w-full max-w-screen-2xl flex-col gap-8 border-t border-white/10 px-8 py-12 md:flex-row md:items-end md:justify-between">
           <div>
             <div className="mb-2 font-headline text-xl italic text-[#faf9f5]">PQBEAT</div>
-            <p className="max-w-xs text-xs leading-relaxed opacity-80">
+            <p className="max-w-sm text-xs leading-relaxed opacity-80">
               © 2026 PQBEAT Research Analytics. Independently maintained, source-backed, and continuously reviewed.
             </p>
           </div>
 
-          <div className="flex flex-wrap gap-12">
-            {footerColumns.map((column) => (
-              <div key={column.heading} className="flex flex-col space-y-4 text-xs">
-                <span className="font-label text-[10px] uppercase tracking-[0.22em] text-stone-300">{column.heading}</span>
-                {column.links.map((link) => (
-                  <span key={link} className="transition-colors hover:text-white">
-                    {link}
-                  </span>
-                ))}
-              </div>
-            ))}
-          </div>
-
-          <div className="text-right">
-            <div className="mb-2 font-label text-[10px] uppercase tracking-[0.22em] text-[#b87333]">Network Status</div>
-            <div className="flex items-center justify-end">
-              <span className="mr-2 h-2 w-2 bg-primary" />
-              <span className="text-[#faf9f5]">Operational</span>
-            </div>
+          <div className="flex flex-wrap gap-5 font-label text-[10px] uppercase tracking-[0.22em] text-stone-400">
+            <Link href="/" className="transition-colors hover:text-white">
+              Overview
+            </Link>
+            <Link href="/registry" className="transition-colors hover:text-white">
+              Registry
+            </Link>
+            <Link href="/knowledge-base" className="transition-colors hover:text-white">
+              Knowledge Base
+            </Link>
+            <Link href="/blog" className="transition-colors hover:text-white">
+              Blog
+            </Link>
           </div>
         </div>
       </footer>
