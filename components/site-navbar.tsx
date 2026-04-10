@@ -12,6 +12,7 @@ type NavItem = {
 const navItems: readonly NavItem[] = [
   { href: "/", label: "Overview" },
   { href: "/registry", label: "Registry" },
+  { href: "/knowledge-base", label: "Knowledge Base" },
   { href: "/blog", label: "Blog", aliases: ["/blog", "/learn"] },
 ];
 
