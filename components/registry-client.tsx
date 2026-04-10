@@ -3,6 +3,7 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import { useDeferredValue, useEffect, useState } from "react";
+import { BlogNewsletterSignup } from "@/components/blog-newsletter-signup";
 import { EntityLogo } from "@/components/entity-logo";
 import { Icon } from "@/components/icon";
 import { SiteNavbar } from "@/components/site-navbar";
@@ -696,6 +697,14 @@ export function RegistryClient({ entities }: { entities: ScoredEntity[] }) {
                   Deep Dive
                 </Link>
                 <span>Source-backed registry</span>
+              </div>
+
+              <div className="mt-8 max-w-3xl">
+                <BlogNewsletterSignup
+                  compact
+                  title="Get the weekly PQBEAT note."
+                  description="A short weekly email when we publish a new brief or materially update registry coverage."
+                />
               </div>
             </div>
           </div>

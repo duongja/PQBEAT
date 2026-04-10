@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
+import { BlogNewsletterSignup } from "@/components/blog-newsletter-signup";
 import { Icon } from "@/components/icon";
 import { QuantumHeroField } from "@/components/quantum-hero-field";
 import { SiteNavbar } from "@/components/site-navbar";
@@ -435,7 +436,17 @@ export default function Home() {
       </main>
 
       <footer className="bg-[#1b1c1a] text-stone-300">
-        <div className="mx-auto flex w-full max-w-screen-2xl flex-col items-center justify-between gap-8 px-8 py-12 md:flex-row md:items-end">
+        <div className="mx-auto w-full max-w-screen-2xl px-8 pt-12">
+          <div className="max-w-3xl">
+            <BlogNewsletterSignup
+              compact
+              title="Get the weekly PQBEAT note."
+              description="A short weekly email when we publish a new brief or materially update registry coverage."
+            />
+          </div>
+        </div>
+
+        <div className="mx-auto mt-12 flex w-full max-w-screen-2xl flex-col items-center justify-between gap-8 border-t border-white/10 px-8 py-12 md:flex-row md:items-end">
           <div>
             <div className="mb-2 font-headline text-xl italic text-[#faf9f5]">PQBEAT</div>
             <p className="max-w-xs text-xs leading-relaxed opacity-80">

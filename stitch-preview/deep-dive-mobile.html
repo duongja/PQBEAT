@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Inter:wght@100..900&amp;family=Space+Grotesk:wght@300..700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline": "#6e7979",
+                    "surface-container-high": "#e9e8e4",
+                    "on-primary-container": "#e3fffe",
+                    "primary": "#006565",
+                    "on-tertiary-container": "#fcf8f8",
+                    "tertiary": "#5b5a5a",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-fixed-dim": "#76d6d5",
+                    "secondary-container": "#fdad67",
+                    "surface-tint": "#006a6a",
+                    "on-background": "#1b1c1a",
+                    "surface-dim": "#dbdad6",
+                    "on-secondary-fixed-variant": "#6d3a00",
+                    "on-tertiary-fixed-variant": "#474746",
+                    "on-secondary": "#ffffff",
+                    "tertiary-fixed-dim": "#c8c6c5",
+                    "surface-container-highest": "#e3e2df",
+                    "on-secondary-container": "#763f00",
+                    "secondary-fixed-dim": "#ffb77b",
+                    "inverse-primary": "#76d6d5",
+                    "on-error": "#ffffff",
+                    "tertiary-container": "#737272",
+                    "on-primary-fixed": "#002020",
+                    "on-secondary-fixed": "#2e1500",
+                    "surface-container-low": "#f4f4f0",
+                    "on-tertiary": "#ffffff",
+                    "secondary": "#8c4f10",
+                    "on-surface": "#1b1c1a",
+                    "on-tertiary-fixed": "#1c1b1b",
+                    "error-container": "#ffdad6",
+                    "error": "#ba1a1a",
+                    "surface": "#faf9f5",
+                    "surface-bright": "#faf9f5",
+                    "surface-variant": "#e3e2df",
+                    "outline-variant": "#bdc9c8",
+                    "on-primary-fixed-variant": "#004f4f",
+                    "on-primary": "#ffffff",
+                    "primary-container": "#008080",
+                    "on-error-container": "#93000a",
+                    "background": "#faf9f5",
+                    "on-surface-variant": "#3e4949",
+                    "primary-fixed": "#93f2f2",
+                    "inverse-on-surface": "#f2f1ed",
+                    "secondary-fixed": "#ffdcc2",
+                    "inverse-surface": "#2f312e",
+                    "tertiary-fixed": "#e5e2e1",
+                    "surface-container": "#efeeea"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Newsreader", "serif"],
+                    "body": ["Inter", "sans-serif"],
+                    "label": ["Space Grotesk", "monospace"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        body {
+            background-color: #faf9f5;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.02'/%3E%3C/svg%3E");
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body text-on-surface selection:bg-primary-container selection:text-white">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#faf9f5]/80 dark:bg-[#1b1c1a]/80 backdrop-blur-xl">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-6 h-16">
+<div class="text-2xl font-bold font-serif text-[#1b1c1a] dark:text-[#faf9f5] tracking-tight">PQBEAT</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#008080] cursor-pointer">search</span>
+<span class="material-symbols-outlined text-[#1b1c1a] cursor-pointer">menu</span>
+</div>
+</div>
+<div class="bg-[#f4f4f0] dark:bg-[#1b1c1a] h-[1px] opacity-20"></div>
+</nav>
+<main class="pt-24 pb-12">
+<!-- Article Header -->
+<header class="px-6 text-center mb-12">
+<div class="flex justify-center items-center gap-2 mb-4">
+<span class="font-label uppercase tracking-widest text-[10px] text-primary font-bold">Analysis</span>
+<span class="w-1 h-1 bg-outline-variant"></span>
+<span class="font-label uppercase tracking-widest text-[10px] text-on-surface-variant opacity-60">Vol. 04 — No. 12</span>
+</div>
+<h1 class="font-headline text-4xl md:text-5xl font-extrabold tracking-tight text-on-surface leading-tight mb-6 italic">
+                Post-Quantum Readiness
+            </h1>
+<p class="font-body text-lg text-on-surface-variant max-w-lg mx-auto leading-relaxed mb-8">
+                The strategic imperative for cryptographic transition in a world of emerging quantum supremacy.
+            </p>
+<div class="flex flex-col items-center gap-1">
+<span class="font-label uppercase tracking-tighter text-xs text-secondary font-bold">By Elias Thorne</span>
+<span class="font-label uppercase text-[10px] text-on-surface-variant opacity-50">November 14, 2024 — 12 Min Read</span>
+</div>
+</header>
+<!-- Featured Image -->
+<div class="w-full mb-12">
+<img class="w-full aspect-[4/3] object-cover" data-alt="Abstract geometric structure of intersecting copper lines and teal glowing nodes against a dark obsidian background, cinematic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-6MYneoe5wcYhxYuUO5MNV9quQusCPJy9oRqkSmVlEl2mukqLUh7PcaBA-pz4yQLvW_e-EZVYUMD75RzLCtjWCprGeIBambD9KSHLm4jHWGlw19rMeKDpwj0boyfkP0VVgPXDVBf37R5nkpQ1SwVSH9lj8J3Em_Cv9IWZHYE6p7hhOsImSPKeysQOqSKOPCrWV6hsnmTqyCNP-4NT5Zz0lnrmVXfMTJvUmAnPtEwQ5aYIAD51kQA6sUdGmDemAKA3FZ6TsX0ApOc"/>
+<div class="px-6 mt-3">
+<p class="font-label text-[9px] uppercase tracking-widest text-on-surface-variant opacity-40 text-center">
+                    Fig 1.1: Schematic representation of lattice-based cryptographic structures.
+                </p>
+</div>
+</div>
+<!-- Article Content -->
+<article class="px-8 max-w-2xl mx-auto space-y-8">
+<p class="font-body text-lg leading-[1.8] text-on-surface first-letter:text-6xl first-letter:font-headline first-letter:float-left first-letter:mr-3 first-letter:text-primary">
+                The architecture of global digital security is built upon foundations that are beginning to show microscopic cracks. As quantum computing shifts from theoretical physics into engineering reality, the algorithms that protect our financial systems, sovereign secrets, and personal identities—RSA and Elliptic Curve Cryptography—face a definitive obsolescence.
+            </p>
+<h2 class="font-headline text-2xl font-bold italic text-on-surface pt-4">The Shor Predicament</h2>
+<p class="font-body text-lg leading-[1.8] text-on-surface">
+                Quantum supremacy is not merely about speed; it is about a different class of mathematical possibility. Shor's algorithm, conceptualized in 1994, demonstrated that a sufficiently large quantum computer could factor large integers exponentially faster than any classical counterpart.
+            </p>
+<div class="bg-surface-container-low p-8 border-l-4 border-primary my-10">
+<span class="font-label text-[10px] uppercase tracking-widest text-primary font-bold mb-2 block">Executive Insight</span>
+<p class="font-headline text-xl italic leading-relaxed text-on-surface">
+                    "Transitioning to Post-Quantum Cryptography (PQC) is not a simple software update. It is a fundamental rewiring of the global trust infrastructure."
+                </p>
+</div>
+<p class="font-body text-lg leading-[1.8] text-on-surface">
+                Organizations must adopt a "Harvest Now, Decrypt Later" defensive posture. Adversaries are already collecting encrypted data streams, betting on the future availability of quantum processing power to unlock today’s secrets.
+            </p>
+<!-- Inline Metric/Data -->
+<div class="grid grid-cols-2 gap-4 my-10">
+<div class="p-6 bg-surface-container-high">
+<div class="font-label text-[10px] uppercase tracking-widest opacity-60 mb-1">Risk Window</div>
+<div class="font-headline text-3xl font-black text-secondary italic">2027-2030</div>
+</div>
+<div class="p-6 bg-surface-container-high">
+<div class="font-label text-[10px] uppercase tracking-widest opacity-60 mb-1">Complexity</div>
+<div class="font-headline text-3xl font-black text-primary italic">10x Class</div>
+</div>
+</div>
+<p class="font-body text-lg leading-[1.8] text-on-surface">
+                The roadmap to readiness involves three distinct phases: inventory, prioritization, and the implementation of NIST-standardized algorithms like CRYSTALS-Kyber. This is the moment for the modern archivist to ensure that the data we save today remains readable for the century to come.
+            </p>
+</article>
+<!-- Related/Bottom Section -->
+<section class="mt-20 px-6 pt-16 bg-surface-container-low">
+<h3 class="font-label uppercase tracking-[0.2em] text-xs font-bold text-on-surface mb-8">Related Analysis</h3>
+<div class="space-y-12">
+<div class="group cursor-pointer">
+<img class="w-full aspect-video object-cover mb-4" data-alt="Close up of a futuristic server rack with glowing green data lights in a dark minimalist data center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAL82qWTJJzGt0CbG6K2olNBA-CPS4T91A5gWdVZlKhE4O6uwblJYXOg5eVz_Ht3kgqGUDPWcSOwhyZMaPKffNCdkq0H5FiAEcRwi8WyEkv4luvcb3JDhUPdecNr5W3IYnH1_t8XG3JSR1a8VWTKAk_c8KI89Rh3O_flAM2wxjMZ8EMfc12o0HJfgYYWzU9m-tNVi0hT7homELfHccV27X_ylzAw9PNPnOTsxdQRQnk4dKsCC_rDZmcA13O7xPtySVITAJ1zlQUj4k"/>
+<span class="font-label uppercase text-[10px] tracking-widest text-primary font-bold">Cryptography</span>
+<h4 class="font-headline text-xl font-bold mt-1 group-hover:text-primary transition-colors">The Kyber Standard: A Technical Deep-Dive</h4>
+</div>
+<div class="group cursor-pointer">
+<img class="w-full aspect-video object-cover mb-4" data-alt="Abstract white marble textures with gold veins reflecting sharp sunlight in a minimalist architectural space" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeN3yGrNp2Mj-Arzb37L6gho1OVai8QGmCbQ_eDJn9tSncQsHb5qXJHoIlN1T46RwHpb8Uv2903gQh1I2lJ1POJp2cjeAukhgzCh2TM6v4DOrHMy4QWMfZaeD-qeeiFPNbpx3tHw_E93EQjxBGwhapPaZ8YQjD0u8VfeBWcT4dJeCulAdp6jWgIPCtGlnIBN3hpJxDfblYEaqvLqZdghprPULRsucRIDRJp7c6Jh9EuJPTRv-fsIc57wUrd7Qnuryt7rrDqZrxehY"/>
+<span class="font-label uppercase text-[10px] tracking-widest text-primary font-bold">Archives</span>
+<h4 class="font-headline text-xl font-bold mt-1 group-hover:text-primary transition-colors">Preservation in the Digital Dark Age</h4>
+</div>
+</div>
+<div class="py-16 text-center">
+<button class="bg-secondary text-on-secondary px-8 py-4 font-label uppercase tracking-widest text-xs font-bold w-full">
+                    Subscribe for Analysis
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-[#e9e8e4] dark:border-[#2d2e2c] bg-[#faf9f5] dark:bg-[#1b1c1a]">
+<div class="flex flex-col items-center max-w-7xl mx-auto px-8 py-12 gap-6">
+<div class="text-lg font-bold text-[#1b1c1a] dark:text-[#faf9f5] font-serif tracking-tight">PQBEAT</div>
+<div class="flex flex-wrap justify-center gap-x-8 gap-y-4">
+<a class="font-mono space-grotesk uppercase tracking-widest text-xs text-[#1b1c1a] dark:text-[#faf9f5] opacity-50 hover:text-[#008080] transition-colors underline-offset-4 hover:underline" href="#">Privacy Policy</a>
+<a class="font-mono space-grotesk uppercase tracking-widest text-xs text-[#1b1c1a] dark:text-[#faf9f5] opacity-50 hover:text-[#008080] transition-colors underline-offset-4 hover:underline" href="#">Terms of Service</a>
+<a class="font-mono space-grotesk uppercase tracking-widest text-xs text-[#1b1c1a] dark:text-[#faf9f5] opacity-50 hover:text-[#008080] transition-colors underline-offset-4 hover:underline" href="#">RSS Feed</a>
+<a class="font-mono space-grotesk uppercase tracking-widest text-xs text-[#1b1c1a] dark:text-[#faf9f5] opacity-50 hover:text-[#008080] transition-colors underline-offset-4 hover:underline" href="#">Twitter</a>
+</div>
+<div class="font-mono space-grotesk uppercase tracking-widest text-[9px] text-[#1b1c1a] dark:text-[#faf9f5] opacity-40 text-center mt-4">
+                © 2024 PQBEAT. THE MODERN ARCHIVIST.
+            </div>
+</div>
+</footer>
+<!-- Reading Progress Mock -->
+<div class="fixed top-16 left-0 h-[2px] bg-primary w-1/3 z-50"></div>
+</body></html>

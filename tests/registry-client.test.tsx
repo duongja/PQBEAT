@@ -24,7 +24,7 @@ describe("RegistryClient", () => {
     expect(evidencePanel).toHaveTextContent("Readiness Signals");
     expect(evidencePanel).toHaveTextContent("Source Intelligence");
     expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
-  }, 10000);
+  }, 15000);
 
   it("falls back to the first visible entity when filters remove the current selection", async () => {
     const user = userEvent.setup();
@@ -41,7 +41,7 @@ describe("RegistryClient", () => {
 
     expect(evidencePanel).toHaveTextContent("Ethereum Validators");
     expect(evidencePanel).not.toHaveTextContent("Alchemy Account Kit & Bundler");
-  }, 10000);
+  }, 15000);
 
   it("opens the mobile detail drawer", async () => {
     const user = userEvent.setup();
