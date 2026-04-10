@@ -33,10 +33,10 @@ describe("route smoke tests", () => {
 
     expect(
       screen.getByRole("heading", {
-        name: /one clear brief on where quantum risk shows up in ethereum/i,
+        name: /weekly research notes on ethereum quantum risk/i,
       }),
     ).toBeInTheDocument();
     expect(screen.getAllByText(/where quantum risk actually shows up in ethereum/i)).not.toHaveLength(0);
-    expect(screen.getByText(/receive pqbeat’s weekly blog updates/i)).toBeInTheDocument();
+    expect(screen.getByText(/get the weekly pqbeat note/i)).toBeInTheDocument();
   });
 });

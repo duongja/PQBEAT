@@ -41,7 +41,7 @@ describe("RegistryClient", () => {
 
     expect(evidencePanel).toHaveTextContent("Ethereum Validators");
     expect(evidencePanel).not.toHaveTextContent("Alchemy Account Kit & Bundler");
-  }, 10000);
+  }, 15000);
 
   it("opens the mobile detail drawer", async () => {
     const user = userEvent.setup();

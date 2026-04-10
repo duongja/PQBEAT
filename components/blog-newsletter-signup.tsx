@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useId, useState } from "react";
 
 type BlogNewsletterSignupProps = {
   eyebrow?: string;
@@ -17,6 +17,7 @@ export function BlogNewsletterSignup({
   description,
   compact = false,
 }: BlogNewsletterSignupProps) {
+  const emailFieldId = useId();
   const [email, setEmail] = useState("");
   const [state, setState] = useState<SubmitState>("idle");
   const [message, setMessage] = useState("");
@@ -70,22 +71,27 @@ export function BlogNewsletterSignup({
       <p className="mt-4 max-w-2xl text-sm leading-6 text-on-surface-variant sm:text-base sm:leading-7">{description}</p>
 
       <form className="mt-6 flex flex-col gap-3 sm:flex-row" onSubmit={handleSubmit}>
-        <label className="sr-only" htmlFor="blog-updates-email">
-          Email address
-        </label>
-        <input
-          id="blog-updates-email"
-          type="email"
-          autoComplete="email"
-          value={email}
-          onChange={(event) => setEmail(event.target.value)}
-          placeholder="Enter your email"
-          className="min-h-12 flex-1 border border-outline-variant/40 bg-surface-container-lowest px-4 py-3 text-sm text-on-surface outline-none transition-colors placeholder:text-outline/80 focus:border-primary"
-        />
+        <div className="flex-1">
+          <label
+            className="mb-2 block font-label text-[10px] uppercase tracking-[0.22em] text-outline"
+            htmlFor={emailFieldId}
+          >
+            Email address
+          </label>
+          <input
+            id={emailFieldId}
+            type="email"
+            autoComplete="email"
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
+            placeholder="Enter your email"
+            className="min-h-12 w-full border border-outline-variant/40 bg-surface-container-lowest px-4 py-3 text-sm text-on-surface outline-none transition-colors placeholder:text-outline/80 focus:border-primary"
+          />
+        </div>
         <button
           type="submit"
           disabled={state === "submitting"}
-          className="min-h-12 bg-primary px-5 py-3 font-label text-[11px] uppercase tracking-[0.22em] text-white transition-colors hover:bg-primary/92 disabled:cursor-not-allowed disabled:opacity-70"
+          className="min-h-12 bg-primary px-5 py-3 font-label text-[11px] uppercase tracking-[0.22em] text-white transition-colors hover:bg-primary/92 disabled:cursor-not-allowed disabled:opacity-70 sm:self-end"
         >
           {state === "submitting" ? "Joining..." : "Get updates"}
         </button>

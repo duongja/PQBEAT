@@ -89,12 +89,6 @@ export function BlogArticlePage({ post, relatedPosts, children }: BlogArticlePag
               </div>
             </div>
           ) : null}
-
-          <BlogNewsletterSignup
-            compact
-            title="Get the weekly PQBEAT note."
-            description="A short weekly email when we publish a new brief or materially update registry coverage."
-          />
         </section>
 
         {relatedPosts.length ? (
@@ -110,17 +104,27 @@ export function BlogArticlePage({ post, relatedPosts, children }: BlogArticlePag
       </main>
 
       <footer className="border-t border-outline-variant/25 bg-surface-container-high/55 px-6 py-14 sm:px-8">
-        <div className="mx-auto flex max-w-screen-xl flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <div className="font-headline text-2xl font-black tracking-[-0.08em] text-on-surface">PQBEAT Blog</div>
-            <p className="mt-3 max-w-xl text-sm leading-6 text-on-surface-variant">
-              Notes from PQBEAT on Ethereum readiness, migration work, and the evidence behind the registry.
-            </p>
+        <div className="mx-auto max-w-screen-xl">
+          <div className="max-w-3xl">
+            <BlogNewsletterSignup
+              compact
+              title="Get the weekly PQBEAT note."
+              description="A short weekly email when we publish a new brief or materially update registry coverage."
+            />
           </div>
-          <div className="flex flex-wrap gap-5 font-label text-[10px] uppercase tracking-[0.22em] text-outline">
-            <Link href="/">Overview</Link>
-            <Link href="/registry">Registry</Link>
-            <Link href="/blog">Blog</Link>
+
+          <div className="mt-12 flex flex-col gap-6 border-t border-outline-variant/25 pt-10 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <div className="font-headline text-2xl font-black tracking-[-0.08em] text-on-surface">PQBEAT Blog</div>
+              <p className="mt-3 max-w-xl text-sm leading-6 text-on-surface-variant">
+                Notes from PQBEAT on Ethereum readiness, migration work, and the evidence behind the registry.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-5 font-label text-[10px] uppercase tracking-[0.22em] text-outline">
+              <Link href="/">Overview</Link>
+              <Link href="/registry">Registry</Link>
+              <Link href="/blog">Blog</Link>
+            </div>
           </div>
         </div>
       </footer>
