@@ -1,3 +1,4 @@
+import { attachDatabasePool } from "@vercel/functions";
 import { MongoClient, type Collection } from "mongodb";
 
 export type BlogSubscriberDocument = {
@@ -22,7 +23,10 @@ function createClientPromise() {
     throw new Error("Missing MONGODB_URI.");
   }
 
-  return new MongoClient(uri).connect();
+  const client = new MongoClient(uri);
+  attachDatabasePool(client);
+
+  return client.connect();
 }
 
 export function getMongoClient() {
