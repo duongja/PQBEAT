@@ -1,6 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 import BlogIndexPage from "@/app/blog/page";
+import KnowledgeBasePage from "@/app/knowledge-base/page";
 import Home from "@/app/page";
 import RegistryPage from "@/app/registry/page";
 import QuantumRiskExplainerPage from "@/app/learn/quantum-risk-in-ethereum/page";
@@ -38,5 +39,13 @@ describe("route smoke tests", () => {
     ).toBeInTheDocument();
     expect(screen.getAllByText(/where quantum risk actually shows up in ethereum/i)).not.toHaveLength(0);
     expect(screen.getByText(/get the weekly pqbeat note/i)).toBeInTheDocument();
+  });
+
+  it("renders the knowledge base from static content", () => {
+    render(<KnowledgeBasePage />);
+
+    expect(screen.getByRole("heading", { name: /knowledge base/i })).toBeInTheDocument();
+    expect(screen.getByPlaceholderText(/search threads and notes/i)).toBeInTheDocument();
+    expect(screen.getByText(/separator-based participation commitments/i)).toBeInTheDocument();
   });
 });
