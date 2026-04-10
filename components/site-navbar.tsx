@@ -3,13 +3,23 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-const navItems = [
+type NavItem = {
+  href: string;
+  label: string;
+  aliases?: readonly string[];
+};
+
+const navItems: readonly NavItem[] = [
   { href: "/", label: "Overview" },
   { href: "/registry", label: "Registry" },
-  { href: "/learn/quantum-risk-in-ethereum", label: "Deep Dive" },
-] as const;
+  { href: "/blog", label: "Blog", aliases: ["/blog", "/learn"] },
+];
 
-function isActive(pathname: string, href: string) {
+function isActive(pathname: string, href: string, aliases?: readonly string[]) {
+  if (aliases?.some((alias) => pathname.startsWith(alias))) {
+    return true;
+  }
+
   if (href === "/") {
     return pathname === "/";
   }
@@ -19,7 +29,7 @@ function isActive(pathname: string, href: string) {
 
 export function SiteNavbar() {
   const pathname = usePathname();
-  const activeItem = navItems.find((item) => isActive(pathname, item.href)) ?? navItems[0];
+  const activeItem = navItems.find((item) => isActive(pathname, item.href, item.aliases)) ?? navItems[0];
 
   return (
     <header className="fixed left-0 top-0 z-50 w-full bg-[#faf9f5]/92 backdrop-blur-xl">
@@ -34,7 +44,7 @@ export function SiteNavbar() {
               key={item.href}
               href={item.href}
               className={`pb-1 font-label text-[11px] uppercase tracking-[0.24em] transition-colors duration-300 ${
-                isActive(pathname, item.href)
+                isActive(pathname, item.href, item.aliases)
                   ? "border-b-2 border-primary text-primary"
                   : "text-[#1b1c1a]/68 hover:text-primary"
               }`}

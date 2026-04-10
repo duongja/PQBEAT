@@ -1,5 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
+import BlogIndexPage from "@/app/blog/page";
 import Home from "@/app/page";
 import RegistryPage from "@/app/registry/page";
 import QuantumRiskExplainerPage from "@/app/learn/quantum-risk-in-ethereum/page";
@@ -23,7 +24,19 @@ describe("route smoke tests", () => {
   it("renders the explainer page from static content", () => {
     render(<QuantumRiskExplainerPage />);
 
-    expect(screen.getByRole("heading", { name: /post-quantum readiness: the ethereum transition/i })).toBeInTheDocument();
-    expect(screen.getByText(/execution accounts: the path to abstraction/i)).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /where quantum risk actually shows up in ethereum/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /eoas are still the obvious weak spot/i })).toBeInTheDocument();
+  });
+
+  it("renders the blog index from static content", () => {
+    render(<BlogIndexPage />);
+
+    expect(
+      screen.getByRole("heading", {
+        name: /one clear brief on where quantum risk shows up in ethereum/i,
+      }),
+    ).toBeInTheDocument();
+    expect(screen.getAllByText(/where quantum risk actually shows up in ethereum/i)).not.toHaveLength(0);
+    expect(screen.getByText(/receive pqbeat’s weekly blog updates/i)).toBeInTheDocument();
   });
 });

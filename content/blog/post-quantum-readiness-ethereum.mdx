@@ -1,0 +1,113 @@
+export const metadata = {
+  title: "Where Quantum Risk Actually Shows Up in Ethereum",
+  excerpt:
+    "A working map of the Ethereum surfaces PQBEAT tracks first: EOAs, validator keys, rollups, smart accounts, and the infrastructure around them.",
+  date: "2026-04-10",
+  author: "PQBEAT Research",
+  readTime: "12 min read",
+  category: "Core Brief",
+  coverImage: "/blog-covers/ethereum-transition.jpg",
+  coverAlt: "Abstract cryptographic visualization in teal and ivory tones.",
+  highlights: [
+    "EOAs are still the clearest user-facing exposure point in Ethereum today.",
+    "Validator keys, wallets, rollups, and infrastructure should be tracked separately, not collapsed into one score.",
+    "Smart accounts matter because they give teams a path to change verification logic without rewriting everything.",
+  ],
+  sources: [
+    { label: "Ethereum accounts", url: "https://ethereum.org/en/developers/docs/accounts/" },
+    { label: "EIP-7702", url: "https://eips.ethereum.org/EIPS/eip-7702" },
+    { label: "ERC-4337", url: "https://eips.ethereum.org/EIPS/eip-4337" },
+    { label: "Ethereum proof-of-stake keys", url: "https://ethereum.org/developers/docs/consensus-mechanisms/pos/keys/" },
+  ],
+};
+
+## Why start with a map
+
+This is the first article in PQBEAT, so it should do one useful thing: explain what we mean when we talk about Ethereum's post-quantum readiness.
+
+Most discussions of quantum risk drift into vague language very quickly. In practice, Ethereum does not have one problem here. It has several different upgrade problems sitting at different layers of the stack.
+
+The point of this note is to separate those layers cleanly. Some can move with software and standards. Some need broader ecosystem coordination. Some look more flexible than they really are because they still inherit trust from Ethereum L1.
+
+Once you break the problem down that way, it becomes much easier to review real projects and avoid hand-wavy claims. That is the model PQBEAT uses in the registry, and this article is the short version of that model.
+
+## EOAs are still the obvious weak spot
+
+Current externally owned accounts are fundamentally tied to `secp256k1` and public-key exposure after spending. In a post-quantum landscape, that makes the default account model the most systemically exposed part of Ethereum's user layer.
+
+That matters because EOAs are still the default for a huge amount of wallet activity. If you are trying to understand where quantum risk becomes a product problem rather than a research topic, this is the first place to look.
+
+The useful question is not whether EOAs can be patched elegantly. It is whether the ecosystem can move meaningful activity toward account models that are programmable enough to absorb new verification logic.
+
+- **Legacy EOA:** hard-coded signature verification in the protocol-default user path.
+- **Abstracted account path:** contract-mediated verification that can evolve without rewriting the entire user experience.
+- **Migration constraint:** users, wallets, relays, and apps all have to move together or the safer path remains niche.
+
+So the near-term story is not "Ethereum becomes quantum-safe." It is simpler than that: Ethereum is slowly building a user layer that can change its signer model with less breakage than a pure EOA system would allow.
+
+## Validator keys are a different migration track
+
+Ethereum's consensus layer already proves the protocol can support a second signature family. That is important because it shows the chain is not conceptually locked to one signer model forever.
+
+What it does **not** prove is that validator readiness is solved. BLS remains a classical assumption, and any move beyond it would require coordination across:
+
+- client implementations
+- staking operations
+- key management procedures
+- withdrawal and rotation workflows
+
+This is why validator readiness should not be blended into the wallet story. The migration unit is different. Wallet risk is spread across users, apps, and consumer tooling. Validator risk is spread across operators, clients, staking providers, and protocol governance.
+
+That makes validator migration its own workstream. It deserves separate evidence, separate timelines, and separate review criteria.
+
+> A lot of confusion disappears once you stop asking whether "Ethereum" is ready and start asking which part of Ethereum you mean.
+
+## Rollups can improve parts of the stack, not the whole stack
+
+Layer 2 systems can often evolve faster than Ethereum L1, and STARK-based proving systems remain more structurally promising from a post-quantum perspective than elliptic-curve-heavy alternatives.
+
+That matters, but only up to a point. Rollups still inherit settlement and exit assumptions from Ethereum. A rollup can improve some of its proving or verification choices faster than L1, but it does not get to detach itself from L1 security by branding alone.
+
+So the practical takeaway is narrower:
+
+1. STARK-heavy systems may become an important risk-reduction layer.
+2. Faster-moving rollups can pilot changes sooner than L1.
+3. The full migration story still comes back to Ethereum settlement and account models.
+
+## Smart accounts are the practical upgrade path
+
+Contract-mediated accounts give Ethereum its clearest migration surface today. They do not solve cryptography on their own, but they create the execution path for newer signer policies as standards and implementations mature.
+
+ERC-4337 matters here because it normalizes the idea that validation can be handled by programmable account logic rather than a single hard-coded user path. That creates room for:
+
+- alternate signer schemes
+- delegated verification logic
+- staged rollouts
+- safer UX around account recovery and rotation
+
+That does not make smart accounts a silver bullet. It just makes them one of the few realistic ways to change how user verification works without forcing the entire application layer to restart from zero.
+
+## Infrastructure decides how painful migration will be
+
+RPCs, wallet services, relays, bundlers, and account toolkits are not the cryptographic root of the problem, but they will determine how survivable the migration feels in practice.
+
+If the infrastructure layer supports safer account flows well, Ethereum can move gradually. If it lags, even good protocol work will feel fragmented to users and app teams.
+
+This is why PQBEAT tracks readiness across the whole stack:
+
+- protocol defaults
+- validator operations
+- rollup settlement
+- smart-account tooling
+- transaction infrastructure
+
+## What PQBEAT is actually tracking
+
+The basic view behind the product is straightforward:
+
+- post-quantum readiness is not one number
+- Ethereum exposure needs to be broken into separate surfaces
+- those surfaces move at different speeds
+- each one needs its own evidence trail
+
+That is also why there is only one public article right now. A single clear note is more useful than three posts saying roughly the same thing in different ways. We can add more once there is something genuinely distinct to say.
