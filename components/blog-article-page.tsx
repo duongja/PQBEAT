@@ -123,6 +123,7 @@ export function BlogArticlePage({ post, relatedPosts, children }: BlogArticlePag
             <div className="flex flex-wrap gap-5 font-label text-[10px] uppercase tracking-[0.22em] text-outline">
               <Link href="/">Overview</Link>
               <Link href="/registry">Registry</Link>
+              <Link href="/knowledge-base">Knowledge Base</Link>
               <Link href="/blog">Blog</Link>
             </div>
           </div>
