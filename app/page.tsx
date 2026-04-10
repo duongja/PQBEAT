@@ -48,21 +48,6 @@ const ecosystemCards = [
   },
 ] as const;
 
-const footerColumns = [
-  {
-    heading: "Framework",
-    links: ["Methodology", "Peer Review"],
-  },
-  {
-    heading: "Legal",
-    links: ["Privacy Policy", "Contact"],
-  },
-  {
-    heading: "Social",
-    links: ["Twitter / X", "GitHub"],
-  },
-] as const;
-
 function formatReviewDate(value: string) {
   return new Intl.DateTimeFormat("en-US", {
     month: "short",
@@ -449,33 +434,27 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="mx-auto mt-12 flex w-full max-w-screen-2xl flex-col items-center justify-between gap-8 border-t border-white/10 px-8 py-12 md:flex-row md:items-end">
+        <div className="mx-auto mt-12 flex w-full max-w-screen-2xl flex-col gap-8 border-t border-white/10 px-8 py-12 md:flex-row md:items-end md:justify-between">
           <div>
             <div className="mb-2 font-headline text-xl italic text-[#faf9f5]">PQBEAT</div>
-            <p className="max-w-xs text-xs leading-relaxed opacity-80">
+            <p className="max-w-sm text-xs leading-relaxed opacity-80">
               © 2026 PQBEAT Research Analytics. Independently maintained, source-backed, and continuously reviewed.
             </p>
           </div>
 
-          <div className="flex flex-wrap gap-12">
-            {footerColumns.map((column) => (
-              <div key={column.heading} className="flex flex-col space-y-4 text-xs">
-                <span className="font-label text-[10px] uppercase tracking-[0.22em] text-stone-300">{column.heading}</span>
-                {column.links.map((link) => (
-                  <span key={link} className="transition-colors hover:text-white">
-                    {link}
-                  </span>
-                ))}
-              </div>
-            ))}
-          </div>
-
-          <div className="text-right">
-            <div className="mb-2 font-label text-[10px] uppercase tracking-[0.22em] text-[#b87333]">Network Status</div>
-            <div className="flex items-center justify-end">
-              <span className="mr-2 h-2 w-2 bg-primary" />
-              <span className="text-[#faf9f5]">Operational</span>
-            </div>
+          <div className="flex flex-wrap gap-5 font-label text-[10px] uppercase tracking-[0.22em] text-stone-400">
+            <Link href="/" className="transition-colors hover:text-white">
+              Overview
+            </Link>
+            <Link href="/registry" className="transition-colors hover:text-white">
+              Registry
+            </Link>
+            <Link href="/knowledge-base" className="transition-colors hover:text-white">
+              Knowledge Base
+            </Link>
+            <Link href="/blog" className="transition-colors hover:text-white">
+              Blog
+            </Link>
           </div>
         </div>
       </footer>
